@@ -39,7 +39,7 @@
 #define ISR_PRIORITY_GPT12_TIMER    6                       /* Define the GPT12 Timer interrupt priority            */
 #define ISR_PROVIDER_GPT12_TIMER    IfxSrc_Tos_cpu0         /* Interrupt provider                                   */
 #define PWM_FREQUENCY               2000.0f                 /* Frequency of the PWM signal in Hz                    */
-#define PWM_DUTY_CYCLE              10                      /* Duty cycle of the PWM signal in percentage           */
+#define PWM_DUTY_CYCLE              80                      /* Duty cycle of the PWM signal in percentage           */
 #define LED                         &MODULE_P13, 2          /* LED which toggles in the Interrupt Service Routine   */
 #define TEST_LED                    &MODULE_P13, 1
 #define GPT1_BLOCK_PRESCALER        32                      /* GPT1 block prescaler value                           */

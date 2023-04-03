@@ -2,7 +2,7 @@ LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
 activeLaunchTarget=null\:---
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:GPT12_PWM_Generation_1_KIT_TC375_LK (1),org.eclipse.launchbar.core.descriptorType.default\:GPT12_PWM_Generation_1_KIT_TC375_LK
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:GPT12_PWM_Generation_1_KIT_TC375_LK (1),org.eclipse.launchbar.core.descriptorType.default\:GPT12_PWM_Generation_1_KIT_TC375_LK,org.eclipse.launchbar.core.descriptorType.default\:GTM_TOM_PWM_1_KIT_TC375_SB
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:GPT12_PWM_Generation_1_KIT_TC375_LK\ (1)/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:GPT12_PWM_Generation_1_KIT_TC375_LK\ (1)/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

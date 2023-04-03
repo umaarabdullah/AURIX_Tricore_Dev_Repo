@@ -33,7 +33,7 @@
 
 #define WAIT_TIME   5000
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
-int duty=20;
+int duty=60;
 
 void core0_main(void)
 {

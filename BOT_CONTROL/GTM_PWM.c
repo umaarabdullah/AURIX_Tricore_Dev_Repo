@@ -26,7 +26,7 @@ IfxGtm_Tom_Pwm_Driver g_tomDriver2;                                  /* Timer Dr
 
 /*-----------Function Implementations------------*/
 
-/* This function initializes the TOM PWM for p02_7(en1) p026(en2) */
+/* This function initializes the TOM PWM for p02_7(en1) p02_6(en2) */
 void initGtmPwm(void)
 {
     IfxGtm_enable(&MODULE_GTM);                                     /* Enable GTM                                   */

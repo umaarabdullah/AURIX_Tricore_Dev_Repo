@@ -1,0 +1,6 @@
+GTM_TOM_PWM_1_KIT_TC375_SB.MCDS.MCDS.pfa_event_pair.0.type=2
+GTM_TOM_PWM_1_KIT_TC375_SB.MCDS.MCDS.pfa_event_pair.1.API_index=3
+GTM_TOM_PWM_1_KIT_TC375_SB.MCDS.MCDS.pfa_event_pair.1.type=3
+GTM_TOM_PWM_1_KIT_TC375_SB.MCDS.MCDS.pfa_event_pair.count=2
+com.tasking.debug.cdt.core.liveVariablesMode=true
+eclipse.preferences.version=1

@@ -1,0 +1,17 @@
+/*
+ * STM_Interrupt.h
+ *
+ *  Created on: May 7, 2023
+ *      Author: Umaar
+ */
+
+#ifndef STM_INTERRUPT_H_
+#define STM_INTERRUPT_H_
+
+
+void startTimer_STM0(void);
+void stopTimer_STM0(void);
+int getTimeElapsed_STM0(void);
+
+
+#endif /* STM_INTERRUPT_H_ */

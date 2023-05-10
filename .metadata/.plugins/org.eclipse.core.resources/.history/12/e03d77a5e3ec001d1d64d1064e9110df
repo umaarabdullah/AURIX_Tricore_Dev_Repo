@@ -1,0 +1,50 @@
+/*
+ * STM_Interrupt.c
+ *
+ *  Created on: May 7, 2023
+ *      Author: Umaar
+ */
+
+#include "STM_Interrupt.h"
+#include "Bsp.h"
+#include "IfxPort.h"
+#include "IfxStm.h"
+
+#define ISR_PRIORITY_STM        40                              /* Priority for interrupt ISR                       */
+#define TIMER_INT_TIME          500                             /* Time between interrupts in ms                    */
+
+#define STM                     &MODULE_STM0                    /* STM0 is used in this example                     */
+
+IfxStm_CompareConfig g_STMConf;                                 /* STM configuration structure                      */
+Ifx_TickTime g_ticksFor500ms;                                   /* Variable to store the number of ticks to wait    */
+
+void initSTM(void);
+
+IFX_INTERRUPT(isrSTM, 0, ISR_PRIORITY_STM);
+
+void isrSTM(void)
+{
+    /* Update the compare register value that will trigger the next interrupt and toggle the LED */
+    IfxStm_increaseCompare(STM, g_STMConf.comparator, g_ticksFor500ms);
+}
+
+/* Function to initialize the STM */
+void initSTM(void)
+{
+    IfxStm_initCompareConfig(&g_STMConf);           /* Initialize the configuration structure with default values   */
+
+    g_STMConf.triggerPriority = ISR_PRIORITY_STM;   /* Set the priority of the interrupt                            */
+    g_STMConf.typeOfService = IfxSrc_Tos_cpu0;      /* Set the service provider for the interrupts                  */
+    g_STMConf.ticks = g_ticksFor500ms;              /* Set the number of ticks after which the timer triggers an
+                                                     * interrupt for the first time                                 */
+    IfxStm_initCompare(STM, &g_STMConf);            /* Initialize the STM with the user configuration               */
+}
+
+/* Function to initialize all the peripherals and variables used */
+void initPeripherals(void)
+{
+    /* Initialize time constant */
+    g_ticksFor500ms = IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, TIMER_INT_TIME);
+
+    initSTM();                                      /* Configure the STM module                                     */
+}

@@ -1,0 +1,13 @@
+02:42:57 **** Incremental Build of configuration Debug for project GPT12_PWM_Generation_1_KIT_TC375_LK ****
+make --output-sync -j12 all 
+Invoking: Print Size
+elfsize  "GPT12_PWM_Generation_1_KIT_TC375_LK.elf"
+Total sizes:
+ROM: 0x3884 (14468) = code: 0x2560 (9568) + romdata: 0x1324 (4900)
+RAM: 0x8484 (33924) = data + bss
+TASKING VX-toolset for AURIX Development Studio (non-commercial): ELF size v1.1r8 Build 22011964
+Finished building: GPT12_PWM_Generation_1_KIT_TC375_LK.siz
+ 
+
+02:42:58 Build Finished. 0 errors, 0 warnings. (took 913ms)
+

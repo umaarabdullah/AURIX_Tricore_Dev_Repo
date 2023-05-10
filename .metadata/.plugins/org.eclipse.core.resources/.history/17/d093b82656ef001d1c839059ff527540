@@ -1,0 +1,78 @@
+/*
+ * SONAR.c
+ *
+ *  Created on: May 7, 2023
+ *      Author: Umaar
+ */
+
+#include "IfxPort.h"
+#include "Bsp.h"
+#include "STM_Interrupt.h"
+#include "UART.h"
+
+#define ECHO         &MODULE_P14,0      /* Echo Pin 22 */
+#define TRIG         &MODULE_P14,1      /* Trig Pin 23 */
+
+#define PULSE_TIME   10                 /* 10us */
+#define Speed_of_Sound 343              /* Speed of sound m/s */
+
+float distance;                           /* Unit: Meter */
+int elapsed_time;                       /* Unit: Seconds */
+
+void SEND_PULSE(void);
+
+void SONAR_INIT(void){
+    IfxPort_setPinModeOutput(TRIG, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+    IfxPort_setPinModeInput(ECHO, IfxPort_Mode_inputPullDown);      // a pull-down resistor to maintain a logic low by default
+
+    initSTM();
+    startTimer_STM0();
+}
+
+/* set the Trig pin high for at least 10 microseconds, and then set it low again. */
+void SEND_PULSE(void){
+    Ifx_TickTime pulse_ticks = IfxStm_getTicksFromMicroseconds(BSP_DEFAULT_TIMER, PULSE_TIME);
+
+    IfxPort_setPinLow(TRIG);    // Set Trig pin low
+    waitTime(pulse_ticks);      // Wait for 10 microseconds
+    IfxPort_setPinHigh(TRIG);   // Set Trig pin High
+    waitTime(pulse_ticks);      // Wait for 10 microseconds
+    IfxPort_setPinLow(TRIG);    // Set Trig pin low
+}
+
+/* Function to measure the distance to an object using the HC-SR04 */
+float SONAR_MEASURE_DISTANCE(void){
+
+    int timeout = 1000000;  // Timeout in microseconds
+    unsigned int start_time, end_time;
+
+    // Send a pulse to the HC-SR04
+    SEND_PULSE();
+
+    // Wait pulseIn i.e for the Echo pin to go high
+    while (!IfxPort_getPinState(ECHO) && timeout > 0) {
+        timeout--;
+    }
+
+    // Start timer
+    start_time = getTicks();
+
+    // Wait for the Echo pin to go low
+    while (IfxPort_getPinState(ECHO) && timeout > 0) {
+        timeout--;
+    }
+
+    // Stop timer and calculate elapsed time
+    end_time = getTicks();
+    elapsed_time = (end_time - start_time)/1000000;     // not 100% accurate need to account for cycle time
+
+    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\rstart_Time: %d\n\r",start_time);
+    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\rend_Time: %d\n\r",end_time);
+    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\rElapsed Time: %d\n\r",elapsed_time);
+
+    // Calculate distance from elapsed time
+    distance = ((elapsed_time * Speed_of_Sound) / 2)*100;
+
+    return distance;
+}
+

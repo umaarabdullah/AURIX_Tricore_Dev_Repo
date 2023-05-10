@@ -8,28 +8,40 @@ C_SRCS += \
 ../Cpu1_Main.c \
 ../Cpu2_Main.c \
 ../GTM_PWM.c \
-../Navigation.c 
+../Navigation.c \
+../SONAR.c \
+../STM_Interrupt.c \
+../UART.c 
 
 COMPILED_SRCS += \
 ./Cpu0_Main.src \
 ./Cpu1_Main.src \
 ./Cpu2_Main.src \
 ./GTM_PWM.src \
-./Navigation.src 
+./Navigation.src \
+./SONAR.src \
+./STM_Interrupt.src \
+./UART.src 
 
 C_DEPS += \
 ./Cpu0_Main.d \
 ./Cpu1_Main.d \
 ./Cpu2_Main.d \
 ./GTM_PWM.d \
-./Navigation.d 
+./Navigation.d \
+./SONAR.d \
+./STM_Interrupt.d \
+./UART.d 
 
 OBJS += \
 ./Cpu0_Main.o \
 ./Cpu1_Main.o \
 ./Cpu2_Main.o \
 ./GTM_PWM.o \
-./Navigation.o 
+./Navigation.o \
+./SONAR.o \
+./STM_Interrupt.o \
+./UART.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -52,7 +64,7 @@ OBJS += \
 clean: clean--2e-
 
 clean--2e-:
-	-$(RM) ./Cpu0_Main.d ./Cpu0_Main.o ./Cpu0_Main.src ./Cpu1_Main.d ./Cpu1_Main.o ./Cpu1_Main.src ./Cpu2_Main.d ./Cpu2_Main.o ./Cpu2_Main.src ./GTM_PWM.d ./GTM_PWM.o ./GTM_PWM.src ./Navigation.d ./Navigation.o ./Navigation.src
+	-$(RM) ./Cpu0_Main.d ./Cpu0_Main.o ./Cpu0_Main.src ./Cpu1_Main.d ./Cpu1_Main.o ./Cpu1_Main.src ./Cpu2_Main.d ./Cpu2_Main.o ./Cpu2_Main.src ./GTM_PWM.d ./GTM_PWM.o ./GTM_PWM.src ./Navigation.d ./Navigation.o ./Navigation.src ./SONAR.d ./SONAR.o ./SONAR.src ./STM_Interrupt.d ./STM_Interrupt.o ./STM_Interrupt.src ./UART.d ./UART.o ./UART.src
 
 .PHONY: clean--2e-
 

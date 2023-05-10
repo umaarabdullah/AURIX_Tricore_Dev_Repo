@@ -1,0 +1,13 @@
+02:43:03 **** Incremental Build of configuration Debug for project STM_Interrupt_1_KIT_TC375_SB ****
+make --output-sync -j12 all 
+Invoking: Print Size
+TASKING VX-toolset for AURIX Development Studio (non-commercial): ELF size v1.1r8 Build 22011964
+elfsize  "STM_Interrupt_1_KIT_TC375_SB.elf"
+Total sizes:
+ROM: 0x6bef (27631) = code: 0x568a (22154) + romdata: 0x1565 (5477)
+RAM: 0x9dc8 (40392) = data + bss
+Finished building: STM_Interrupt_1_KIT_TC375_SB.siz
+ 
+
+02:43:04 Build Finished. 0 errors, 0 warnings. (took 1s.12ms)
+

@@ -53,7 +53,7 @@ Ifx_TickTime ticksRequired;
 /*********************************************************************************************************************/
 /*-----------------------------------------------Function Prototypes-------------------------------------------------*/
 /*********************************************************************************************************************/
-void setDutyCycle(uint32 dutyCycle);                                /* Function to set the duty cycle of the PWM    */
+void setDutyCycle(uint32 dutyCycle);
 
 /*********************************************************************************************************************/
 /*--------------------------------------------Function Implementations-----------------------------------------------*/
@@ -79,31 +79,32 @@ void initGtmTomPwm(void)
 
     ticksRequired = IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 1000);  /* Initialize tickFor100ms */
 
-//    setDutyCycle(10);                                      /* Set the duty cycle of the PWM thereby varying the power delivery               */
+//    setDutyCycle(90);                                      /* Set the duty cycle of the PWM thereby varying the power delivery               */
 }
 
 /* This function creates the fade effect for the LED */
 void fadeLED(void)
 {
-    if((g_fadeValue + FADE_STEP) >= PWM_PERIOD)
-    {
-        g_fadeDir = -1;                                             /* Set the direction of the fade                */
-    }
-    else if(g_fadeValue == 0)
-    {
-        g_fadeDir = 1;                                              /* Set the direction of the fade                */
-    }
-    setDutyCycle(g_fadeValue);                                      /* Set the duty cycle of the PWM thereby varying the power delivery               */
-
-    if(g_fadeValue == 0)
-            waitTime(ticksRequired);
-
-    g_fadeValue += g_fadeDir * FADE_STEP;                           /* Calculation of the new duty cycle            */
+//    if((g_fadeValue + FADE_STEP) >= PWM_PERIOD)
+//    {
+//        g_fadeDir = -1;                                             /* Set the direction of the fade                */
+//    }
+//    else if(g_fadeValue == 0)
+//    {
+//        g_fadeDir = 1;                                              /* Set the direction of the fade                */
+//    }
+    setDutyCycle(40000);                                      /* Set the duty cycle of the PWM thereby varying the power delivery               */
+//
+//    if(g_fadeValue == 0)
+//            waitTime(ticksRequired);
+//
+//    g_fadeValue += g_fadeDir * FADE_STEP;                           /* Calculation of the new duty cycle            */
 }
 
 /* This function sets the duty cycle of the PWM */
 void setDutyCycle(uint32 dutyCycle)
 {
+    // dutyCycle is the time in ms for which signal will be high
     g_tomConfig.dutyCycle = dutyCycle;                              /* Change the value of the duty cycle           */
     IfxGtm_Tom_Pwm_init(&g_tomDriver, &g_tomConfig);                /* Re-initialize the PWM                        */
 }

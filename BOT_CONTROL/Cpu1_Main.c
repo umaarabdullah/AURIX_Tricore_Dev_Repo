@@ -27,6 +27,7 @@
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
+#include "UART.h"
 
 extern IfxCpu_syncEvent g_cpuSyncEvent;
 
@@ -43,7 +44,11 @@ void core1_main(void)
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
     
+    /* Initialize the Shell Interface and the UART communication */
+    initShellInterface();
+
     while(1)
     {
+
     }
 }

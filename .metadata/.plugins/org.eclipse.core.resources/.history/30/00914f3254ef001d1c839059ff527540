@@ -1,0 +1,156 @@
+/*
+ * SONAR.c
+ *
+ *  Created on: May 7, 2023
+ *      Author: Umaar
+ */
+
+#include <stdio.h>
+#include "Ifx_Types.h"
+#include "IfxCpu.h"
+#include "IfxPort.h"
+#include "IfxStm.h"
+#include "IfxStdIf_DPipe.h"
+
+// Define the trigger and echo pins of the HC-SR04 sensor
+#define TRIG_PORT       &MODULE_P33
+#define TRIG_PIN         0
+#define ECHO_PORT       &MODULE_P33
+#define ECHO_PIN         1
+
+// Define constants for the speed of sound and the trigger pulse duration
+#define SPEED_OF_SOUND  343.0f
+#define TRIGGER_DURATION_US 10.0f
+
+// Global variables
+IfxStdIf_DPipe g_ascStandardInterface; // Standard interface object
+float g_distance_cm = 0.0f; // Distance in centimeters
+
+// Function prototypes
+void init_hc_sensor(void);
+float measure_distance(void);
+
+int main(void) {
+    // Initialize the HC-SR04 sensor
+    init_hc_sensor();
+
+    // Loop forever and measure distance
+    while(1) {
+        g_distance_cm = measure_distance();
+        printf("Distance: %.2f cm\n", g_distance_cm);
+    }
+}
+
+void init_hc_sensor(void) {
+    // Initialize the STM module for delay functions
+    Ifx_STM_Config stmConfig;
+    IfxStm_initConfig(&stmConfig);
+    IfxStm_init(&MODULE_STM0, &stmConfig);
+
+    // Initialize the DPipe interface for the HC-SR04 sensor
+    IfxStdIf_DPipe_Config pipeConfig;
+    IfxStdIf_DPipe_initConfig(&pipeConfig);
+    pipeConfig.typeOfService = IfxSrc_Tos_dma;
+    pipeConfig.mode = IfxStdIf_DPipe_Mode_blocking;
+    IfxStdIf_DPipe_init(&g_ascStandardInterface, TRIG_PORT, TRIG_PIN, ECHO_PORT, ECHO_PIN, &pipeConfig);
+
+    // Set the trigger pin as output and echo pin as input
+    IfxPort_setPinModeOutput(TRIG_PORT, TRIG_PIN, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+    IfxPort_setPinModeInput(ECHO_PORT, ECHO_PIN, IfxPort_InputMode_pullUp);
+}
+
+float measure_distance(void) {
+    // Send a 10 us trigger pulse to the sensor
+    IfxPort_setPinHigh(TRIG_PORT, TRIG_PIN);
+    IfxStm_waitTicks(&MODULE_STM0, IfxStm_getTicksFromMicroseconds(TRIGGER_DURATION_US));
+    IfxPort_setPinLow(TRIG_PORT, TRIG_PIN);
+
+    // Wait for the echo pin to go high and measure the duration
+    uint32_t startTime = IfxStm_getMicrosecond(&MODULE_STM0);
+    uint32_t duration = 0;
+    while (!IfxPort_getPinState(ECHO_PORT, ECHO_PIN)) {
+        duration = IfxStm_getElapsedMicroseconds(&MODULE_STM0, startTime);
+        if (duration > 10000) { // Timeout after 10 ms
+            return 0.0f;
+        }
+    }
+
+    // Measure the duration of the echo pulse
+    startTime = IfxStm_getMicrosecond(&MODULE_STM0);
+    duration = 0;
+    while (IfxPort_getPinState(ECHO_PORT, ECHO_PIN)) {
+        duration = IfxStm_getElapsedMicroseconds(& // Calculate the distance from the duration of the echo pulse
+                float distance_m = (duration / 2.0f) * (SPEED_OF_SOUND / 1000000.0f);
+                float distance_cm = distance_m * 100.0f;
+
+                return distance_cm;
+
+
+//#include "IfxPort.h"
+//#include "Bsp.h"
+//#include "STM_Interrupt.h"
+//#include "UART.h"
+//
+//#define ECHO         &MODULE_P14,0      /* Echo Pin 22 */
+//#define TRIG         &MODULE_P14,1      /* Trig Pin 23 */
+//
+//#define PULSE_TIME   10                 /* 10us */
+//#define Speed_of_Sound 343              /* Speed of sound m/s */
+//
+//int distance;                           /* Unit: Meter */
+//int elapsed_time;                       /* Unit: Seconds */
+//
+//void SEND_PULSE(void);
+//
+//void SONAR_INIT(void){
+//    IfxPort_setPinModeOutput(TRIG, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+//    IfxPort_setPinModeInput(ECHO, IfxPort_Mode_inputPullDown);      // a pull-down resistor to maintain a logic low by default
+//}
+//
+///* set the Trig pin high for at least 10 microseconds, and then set it low again. */
+//void SEND_PULSE(void){
+//    Ifx_TickTime pulse_ticks = IfxStm_getTicksFromMicroseconds(BSP_DEFAULT_TIMER, PULSE_TIME);
+//
+//    IfxPort_setPinLow(TRIG);    // Set Trig pin low
+//    waitTime(pulse_ticks);      // Wait for 10 microseconds
+//    IfxPort_setPinHigh(TRIG);   // Set Trig pin High
+//    waitTime(pulse_ticks);      // Wait for 10 microseconds
+//    IfxPort_setPinLow(TRIG);    // Set Trig pin low
+//}
+//
+///* Function to measure the distance to an object using the HC-SR04 */
+//int SONAR_MEASURE_DISTANCE(void){
+//
+//    int timeout = 1000000;  // Timeout in microseconds
+//    unsigned int start_time, end_time;
+//
+//    // Send a pulse to the HC-SR04
+//    SEND_PULSE();
+//
+//    // Wait pulseIn i.e for the Echo pin to go high
+//    while (!IfxPort_getPinState(ECHO) && timeout > 0) {
+//        timeout--;
+//    }
+//
+//    // Start timer
+//    start_time = getTicks();
+//
+//    // Wait for the Echo pin to go low
+//    while (IfxPort_getPinState(ECHO) && timeout > 0) {
+//        timeout--;
+//    }
+//
+//    // Stop timer and calculate elapsed time
+//    end_time = getTicks();
+//    elapsed_time = (end_time - start_time)/1000000;     // not 100% accurate need to account for cycle time
+//
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\rElapsed Time: %d\n\r",elapsed_time);
+//
+//    // Calculate distance from elapsed time
+//    distance = ((elapsed_time * Speed_of_Sound) / 2)*100;
+//
+//    return distance;
+//}
+//
+//
+//

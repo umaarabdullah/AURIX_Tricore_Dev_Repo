@@ -9,6 +9,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include Libraries/iLLD/TC37A/Tricore/_PinMap/subdir.mk
+-include Libraries/iLLD/TC37A/Tricore/_Lib/DataHandling/subdir.mk
 -include Libraries/iLLD/TC37A/Tricore/_Impl/subdir.mk
 -include Libraries/iLLD/TC37A/Tricore/Stm/Std/subdir.mk
 -include Libraries/iLLD/TC37A/Tricore/Src/Std/subdir.mk
@@ -21,7 +22,11 @@ RM := rm -rf
 -include Libraries/iLLD/TC37A/Tricore/Cpu/Trap/subdir.mk
 -include Libraries/iLLD/TC37A/Tricore/Cpu/Std/subdir.mk
 -include Libraries/iLLD/TC37A/Tricore/Cpu/Irq/subdir.mk
+-include Libraries/iLLD/TC37A/Tricore/Asclin/Std/subdir.mk
+-include Libraries/iLLD/TC37A/Tricore/Asclin/Asc/subdir.mk
+-include Libraries/Service/CpuGeneric/SysSe/Comm/subdir.mk
 -include Libraries/Service/CpuGeneric/SysSe/Bsp/subdir.mk
+-include Libraries/Service/CpuGeneric/StdIf/subdir.mk
 -include Libraries/Infra/Ssw/TC37A/Tricore/subdir.mk
 -include Libraries/Infra/Platform/Tricore/Compilers/subdir.mk
 -include Configurations/Debug/subdir.mk

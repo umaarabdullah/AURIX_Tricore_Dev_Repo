@@ -90,3 +90,13 @@ c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Libraries/iLL
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Libraries/Infra/Sfr/TC37A/_Reg/IfxCbs_reg.h :
 /Cpu0_Main.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Libraries/Infra/Sfr/TC37A/_Reg/IfxCbs_regdef.h
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Libraries/Infra/Sfr/TC37A/_Reg/IfxCbs_regdef.h :
+/Cpu0_Main.o :	../STM_Interrupt.h
+../STM_Interrupt.h :
+/Cpu0_Main.o :	../SONAR.h
+../SONAR.h :
+/Cpu0_Main.o :	../UART.h
+../UART.h :
+/Cpu0_Main.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.h
+c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.h :
+/Cpu0_Main.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Libraries/Service/CpuGeneric/StdIf/IfxStdIf.h
+c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Libraries/Service/CpuGeneric/StdIf/IfxStdIf.h :

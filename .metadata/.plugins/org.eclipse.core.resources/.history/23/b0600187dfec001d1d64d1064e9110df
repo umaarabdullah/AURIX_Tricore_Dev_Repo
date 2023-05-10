@@ -1,0 +1,19 @@
+/*
+ * SONAR.c
+ *
+ *  Created on: May 7, 2023
+ *      Author: Umaar
+ */
+
+#include "IfxPort.h"
+
+#define ECHO         &MODULE_P14,0      /* Echo Pin P14_0 */
+#define TRIG         &MODULE_P10,1      /* Trig Pin P14_1 */
+
+void SONAR_INIT(void){
+    IfxPort_setPinModeOutput(TRIG, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+    IfxPort_setPinModeInput(ECHO, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+}
+
+
+

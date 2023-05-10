@@ -2,4 +2,4 @@
 OPEN_ON_SINGLE_CLICK=true
 SAVE_AUTOMATICALLY=true
 eclipse.preferences.version=1
-org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<org.eclipse.ui.commands/>
+org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<org.eclipse.ui.commands>\r\n<keyBinding commandId\="org.eclipse.ui.project.buildProject" contextId\="org.eclipse.ui.contexts.window" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="ALT+CTRL+B"/>\r\n</org.eclipse.ui.commands>

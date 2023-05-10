@@ -73,7 +73,7 @@ void initSTM(void)
 
     g_STMConf.triggerPriority = ISR_PRIORITY_STM;   /* Set the priority of the interrupt                            */
     g_STMConf.typeOfService = IfxSrc_Tos_cpu0;      /* Set the service provider for the interrupts                  */
-    g_STMConf.ticks = g_ticksForDelayus;              /* Set the number of ticks after which the timer triggers an
+    g_STMConf.ticks = g_ticksForDelayus;            /* Set the number of ticks after which the timer triggers an
                                                      * interrupt for the first time                                 */
     IfxStm_initCompare(STM, &g_STMConf);            /* Initialize the STM with the user configuration               */
 }

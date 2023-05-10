@@ -6,4 +6,5 @@
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1676616051185_0" label="Window Working Set" name="Aggregate for window 1676003039184">
 <workingSet IMemento.internal.id="ActiveProject"/>
 </workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1683752125126_2" label="Window Working Set" name="Aggregate for window 1683752125126"/>
 </workingSetManager>

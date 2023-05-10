@@ -4,6 +4,6 @@ Connected to device... [TRICORE] DAS JTAG SHIELDBUDDY TC375
  ::Warning: The given program file is trying to write on reserved memory addresses, which will be skipped.
 ::Erasing Flash memory .......... (Pass)
 ::Programming Flash memory .......... (Pass)
-Overall time: 1313 ms
+Overall time: 1305 ms
 AurixFlasher Exit Status: Pass
 Flashing was successfull

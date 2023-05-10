@@ -21337,3 +21337,282 @@ Connected to device... [TRICORE] DAS JTAG SHIELDBUDDY TC375
 Overall time: 1313 ms
 AurixFlasher Exit Status: Pass
 Flashing was successfull
+Build started...
+03:15:08 **** Incremental Build of configuration Debug for project BOT_CONTROL ****
+make --output-sync -j12 all 
+Building file: ../Cpu0_Main.c
+TASKING VX-toolset for AURIX Development Studio (non-commercial): control program v1.1r8 Build 22011964
+Invoking: TASKING C/C++ Compiler
+cctc -cs --dep-file="Cpu0_Main.d" --misrac-version=2004 -D__CPU__=tc37x "-fC:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Debug/TASKING_C_C___Compiler-Include_paths.opt" --iso=99 --c++14 --language=+volatile --exceptions --anachronisms --fp-model=3 -O0 --tradeoff=4 --compact-max-size=200 -g -Wc-w544 -Wc-w557 -Ctc37x -Y0 -N0 -Z0 -o "Cpu0_Main.src" "../Cpu0_Main.c" && \
+if [ -f "Cpu0_Main.d" ]; then sed.exe -r  -e 's/\b(.+\.o)\b/\/\1/g' -e 's/\\/\//g' -e 's/\/\//\//g' -e 's/"//g' -e 's/([a-zA-Z]:\/)/\L\1/g' -e 's/\d32:/@TARGET_DELIMITER@/g; s/\\\d32/@ESCAPED_SPACE@/g; s/\d32/\\\d32/g; s/@ESCAPED_SPACE@/\\\d32/g; s/@TARGET_DELIMITER@/\d32:/g' "Cpu0_Main.d" > "Cpu0_Main.d_sed" && cp "Cpu0_Main.d_sed" "Cpu0_Main.d" && rm -f "Cpu0_Main.d_sed" 2>/dev/null; else echo 'No dependency file to process';fi
+Finished building: ../Cpu0_Main.c
+ 
+Building file: ../Cpu1_Main.c
+Invoking: TASKING C/C++ Compiler
+cctc -cs --dep-file="Cpu1_Main.d" --misrac-version=2004 -D__CPU__=tc37x "-fC:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Debug/TASKING_C_C___Compiler-Include_paths.opt" --iso=99 --c++14 --language=+volatile --exceptions --anachronisms --fp-model=3 -O0 --tradeoff=4 --compact-max-size=200 -g -Wc-w544 -Wc-w557 -Ctc37x -Y0 -N0 -Z0 -o "Cpu1_Main.src" "../Cpu1_Main.c" && \
+if [ -f "Cpu1_Main.d" ]; then sed.exe -r  -e 's/\b(.+\.o)\b/\/\1/g' -e 's/\\/\//g' -e 's/\/\//\//g' -e 's/"//g' -e 's/([a-zA-Z]:\/)/\L\1/g' -e 's/\d32:/@TARGET_DELIMITER@/g; s/\\\d32/@ESCAPED_SPACE@/g; s/\d32/\\\d32/g; s/@ESCAPED_SPACE@/\\\d32/g; s/@TARGET_DELIMITER@/\d32:/g' "Cpu1_Main.d" > "Cpu1_Main.d_sed" && cp "Cpu1_Main.d_sed" "Cpu1_Main.d" && rm -f "Cpu1_Main.d_sed" 2>/dev/null; else echo 'No dependency file to process';fi
+Finished building: ../Cpu1_Main.c
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): control program v1.1r8 Build 22011964
+Building file: ../Cpu2_Main.c
+TASKING VX-toolset for AURIX Development Studio (non-commercial): control program v1.1r8 Build 22011964
+Invoking: TASKING C/C++ Compiler
+cctc -cs --dep-file="Cpu2_Main.d" --misrac-version=2004 -D__CPU__=tc37x "-fC:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Debug/TASKING_C_C___Compiler-Include_paths.opt" --iso=99 --c++14 --language=+volatile --exceptions --anachronisms --fp-model=3 -O0 --tradeoff=4 --compact-max-size=200 -g -Wc-w544 -Wc-w557 -Ctc37x -Y0 -N0 -Z0 -o "Cpu2_Main.src" "../Cpu2_Main.c" && \
+if [ -f "Cpu2_Main.d" ]; then sed.exe -r  -e 's/\b(.+\.o)\b/\/\1/g' -e 's/\\/\//g' -e 's/\/\//\//g' -e 's/"//g' -e 's/([a-zA-Z]:\/)/\L\1/g' -e 's/\d32:/@TARGET_DELIMITER@/g; s/\\\d32/@ESCAPED_SPACE@/g; s/\d32/\\\d32/g; s/@ESCAPED_SPACE@/\\\d32/g; s/@TARGET_DELIMITER@/\d32:/g' "Cpu2_Main.d" > "Cpu2_Main.d_sed" && cp "Cpu2_Main.d_sed" "Cpu2_Main.d" && rm -f "Cpu2_Main.d_sed" 2>/dev/null; else echo 'No dependency file to process';fi
+Finished building: ../Cpu2_Main.c
+ 
+Building file: ../SONAR.c
+Invoking: TASKING C/C++ Compiler
+cctc -cs --dep-file="SONAR.d" --misrac-version=2004 -D__CPU__=tc37x "-fC:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Debug/TASKING_C_C___Compiler-Include_paths.opt" --iso=99 --c++14 --language=+volatile --exceptions --anachronisms --fp-model=3 -O0 --tradeoff=4 --compact-max-size=200 -g -Wc-w544 -Wc-w557 -Ctc37x -Y0 -N0 -Z0 -o "SONAR.src" "../SONAR.c" && \
+if [ -f "SONAR.d" ]; then sed.exe -r  -e 's/\b(.+\.o)\b/\/\1/g' -e 's/\\/\//g' -e 's/\/\//\//g' -e 's/"//g' -e 's/([a-zA-Z]:\/)/\L\1/g' -e 's/\d32:/@TARGET_DELIMITER@/g; s/\\\d32/@ESCAPED_SPACE@/g; s/\d32/\\\d32/g; s/@ESCAPED_SPACE@/\\\d32/g; s/@TARGET_DELIMITER@/\d32:/g' "SONAR.d" > "SONAR.d_sed" && cp "SONAR.d_sed" "SONAR.d" && rm -f "SONAR.d_sed" 2>/dev/null; else echo 'No dependency file to process';fi
+Finished building: ../SONAR.c
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): control program v1.1r8 Build 22011964
+Building file: ../STM_Interrupt.c
+Invoking: TASKING C/C++ Compiler
+cctc -cs --dep-file="STM_Interrupt.d" --misrac-version=2004 -D__CPU__=tc37x "-fC:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Debug/TASKING_C_C___Compiler-Include_paths.opt" --iso=99 --c++14 --language=+volatile --exceptions --anachronisms --fp-model=3 -O0 --tradeoff=4 --compact-max-size=200 -g -Wc-w544 -Wc-w557 -Ctc37x -Y0 -N0 -Z0 -o "STM_Interrupt.src" "../STM_Interrupt.c" && \
+if [ -f "STM_Interrupt.d" ]; then sed.exe -r  -e 's/\b(.+\.o)\b/\/\1/g' -e 's/\\/\//g' -e 's/\/\//\//g' -e 's/"//g' -e 's/([a-zA-Z]:\/)/\L\1/g' -e 's/\d32:/@TARGET_DELIMITER@/g; s/\\\d32/@ESCAPED_SPACE@/g; s/\d32/\\\d32/g; s/@ESCAPED_SPACE@/\\\d32/g; s/@TARGET_DELIMITER@/\d32:/g' "STM_Interrupt.d" > "STM_Interrupt.d_sed" && cp "STM_Interrupt.d_sed" "STM_Interrupt.d" && rm -f "STM_Interrupt.d_sed" 2>/dev/null; else echo 'No dependency file to process';fi
+Finished building: ../STM_Interrupt.c
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): control program v1.1r8 Build 22011964
+ctc W560: ["../STM_Interrupt.c" 64/55] possible truncation at implicit conversion to type "unsigned long int"
+ctc W560: ["../STM_Interrupt.c" 76/21] possible truncation at implicit conversion to type "unsigned long int"
+0 errors, 2 warnings
+Building file: ../UART.c
+Invoking: TASKING C/C++ Compiler
+cctc -cs --dep-file="UART.d" --misrac-version=2004 -D__CPU__=tc37x "-fC:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Debug/TASKING_C_C___Compiler-Include_paths.opt" --iso=99 --c++14 --language=+volatile --exceptions --anachronisms --fp-model=3 -O0 --tradeoff=4 --compact-max-size=200 -g -Wc-w544 -Wc-w557 -Ctc37x -Y0 -N0 -Z0 -o "UART.src" "../UART.c" && \
+if [ -f "UART.d" ]; then sed.exe -r  -e 's/\b(.+\.o)\b/\/\1/g' -e 's/\\/\//g' -e 's/\/\//\//g' -e 's/"//g' -e 's/([a-zA-Z]:\/)/\L\1/g' -e 's/\d32:/@TARGET_DELIMITER@/g; s/\\\d32/@ESCAPED_SPACE@/g; s/\d32/\\\d32/g; s/@ESCAPED_SPACE@/\\\d32/g; s/@TARGET_DELIMITER@/\d32:/g' "UART.d" > "UART.d_sed" && cp "UART.d_sed" "UART.d" && rm -f "UART.d_sed" 2>/dev/null; else echo 'No dependency file to process';fi
+Finished building: ../UART.c
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): control program v1.1r8 Build 22011964
+Building file: Cpu1_Main.src
+Invoking: TASKING Assembler
+astc -Og -Os --no-warnings= --error-limit=42 -o  "Cpu1_Main.o" "Cpu1_Main.src"
+Finished building: Cpu1_Main.src
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): assembler v1.1r8 Build 22011964
+Building file: Cpu0_Main.src
+Invoking: TASKING Assembler
+astc -Og -Os --no-warnings= --error-limit=42 -o  "Cpu0_Main.o" "Cpu0_Main.src"
+Finished building: Cpu0_Main.src
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): assembler v1.1r8 Build 22011964
+Building file: Cpu2_Main.src
+Invoking: TASKING Assembler
+astc -Og -Os --no-warnings= --error-limit=42 -o  "Cpu2_Main.o" "Cpu2_Main.src"
+Finished building: Cpu2_Main.src
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): assembler v1.1r8 Build 22011964
+Building file: SONAR.src
+Invoking: TASKING Assembler
+astc -Og -Os --no-warnings= --error-limit=42 -o  "SONAR.o" "SONAR.src"
+Finished building: SONAR.src
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): assembler v1.1r8 Build 22011964
+Building file: STM_Interrupt.src
+Invoking: TASKING Assembler
+astc -Og -Os --no-warnings= --error-limit=42 -o  "STM_Interrupt.o" "STM_Interrupt.src"
+Finished building: STM_Interrupt.src
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): assembler v1.1r8 Build 22011964
+Building file: UART.src
+Invoking: TASKING Assembler
+astc -Og -Os --no-warnings= --error-limit=42 -o  "UART.o" "UART.src"
+Finished building: UART.src
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): assembler v1.1r8 Build 22011964
+Building target: BOT_CONTROL.elf
+Invoking: TASKING Linker
+TASKING VX-toolset for AURIX Development Studio (non-commercial): control program v1.1r8 Build 22011964
+cctc --lsl-file="../Lcf_Tasking_Tricore_Tc.lsl" -Wl-Oc -Wl-OL -Wl-Ot -Wl-Ox -Wl-Oy -Wl--map-file="BOT_CONTROL.map" -Wl-mc -Wl-mf -Wl-mi -Wl-mk -Wl-ml -Wl-mm -Wl-md -Wl-mr -Wl-mu --no-warnings= -Wl--error-limit=42 -lcs_fpu -lfp_fpu -lrt --lsl-core=vtc --exceptions --strict --anachronisms --force-c++ -Ctc37x -o"BOT_CONTROL.elf" -Wl-o"BOT_CONTROL.hex:IHEX"  ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxAsclin_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxCan_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxCcu6_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxDmu_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxEdsadc_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxEray_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxEvadc_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxGeth_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxGpt12_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxGtm_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxI2c_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxMsc_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxPms_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxPort_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxPsi5_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxPsi5s_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxQspi_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxScu_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxSent_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxSmu_PinMap.o  ./Libraries/iLLD/TC37A/Tricore/_Lib/DataHandling/Ifx_CircularBuffer.asm.o ./Libraries/iLLD/TC37A/Tricore/_Lib/DataHandling/Ifx_CircularBuffer.o ./Libraries/iLLD/TC37A/Tricore/_Lib/DataHandling/Ifx_Fifo.o  ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxAsclin_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxCan_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxCcu6_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxCpu_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxDma_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxEray_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxEvadc_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxFlash_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxGeth_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxGtm_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxHssl_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxI2c_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxMsc_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxMtu_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxPort_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxPsi5_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxQspi_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxScu_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxSent_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxSmu_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxSrc_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxStm_cfg.o  ./Libraries/iLLD/TC37A/Tricore/Stm/Std/IfxStm.o  ./Libraries/iLLD/TC37A/Tricore/Src/Std/IfxSrc.o  ./Libraries/iLLD/TC37A/Tricore/Scu/Std/IfxScuCcu.o ./Libraries/iLLD/TC37A/Tricore/Scu/Std/IfxScuEru.o ./Libraries/iLLD/TC37A/Tricore/Scu/Std/IfxScuLbist.o ./Libraries/iLLD/TC37A/Tricore/Scu/Std/IfxScuRcu.o ./Libraries/iLLD/TC37A/Tricore/Scu/Std/IfxScuWdt.o  ./Libraries/iLLD/TC37A/Tricore/Port/Std/IfxPort.o  ./Libraries/iLLD/TC37A/Tricore/Pms/Std/IfxPmsEvr.o ./Libraries/iLLD/TC37A/Tricore/Pms/Std/IfxPmsPm.o  ./Libraries/iLLD/TC37A/Tricore/Mtu/Std/IfxMtu.o  ./Libraries/iLLD/TC37A/Tricore/Gtm/Tom/Pwm/IfxGtm_Tom_Pwm.o  ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Atom.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Cmu.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Dpll.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Dtm.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Psm.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Spe.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Tbu.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Tim.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Tom.o  ./Libraries/iLLD/TC37A/Tricore/Cpu/Trap/IfxCpu_Trap.o  ./Libraries/iLLD/TC37A/Tricore/Cpu/Std/IfxCpu.o  ./Libraries/iLLD/TC37A/Tricore/Cpu/Irq/IfxCpu_Irq.o  ./Libraries/iLLD/TC37A/Tricore/Asclin/Std/IfxAsclin.o  ./Libraries/iLLD/TC37A/Tricore/Asclin/Asc/IfxAsclin_Asc.o  ./Libraries/Service/CpuGeneric/SysSe/Comm/Ifx_Console.o ./Libraries/Service/CpuGeneric/SysSe/Comm/Ifx_Shell.o  ./Libraries/Service/CpuGeneric/SysSe/Bsp/Assert.o ./Libraries/Service/CpuGeneric/SysSe/Bsp/Bsp.o  ./Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.o ./Libraries/Service/CpuGeneric/StdIf/IfxStdIf_Pos.o ./Libraries/Service/CpuGeneric/StdIf/IfxStdIf_PwmHl.o ./Libraries/Service/CpuGeneric/StdIf/IfxStdIf_Timer.o  ./Libraries/Infra/Ssw/TC37A/Tricore/Ifx_Ssw_Infra.o ./Libraries/Infra/Ssw/TC37A/Tricore/Ifx_Ssw_Tc0.o ./Libraries/Infra/Ssw/TC37A/Tricore/Ifx_Ssw_Tc1.o ./Libraries/Infra/Ssw/TC37A/Tricore/Ifx_Ssw_Tc2.o  ./Libraries/Infra/Platform/Tricore/Compilers/CompilerDcc.o ./Libraries/Infra/Platform/Tricore/Compilers/CompilerGhs.o ./Libraries/Infra/Platform/Tricore/Compilers/CompilerGnuc.o ./Libraries/Infra/Platform/Tricore/Compilers/CompilerTasking.o  ./Configurations/Debug/sync_on_halt.o  ./Configurations/Ifx_Cfg_Ssw.o ./Configurations/Ifx_Cfg_SswBmhd.o  ./Cpu0_Main.o ./Cpu1_Main.o ./Cpu2_Main.o ./GTM_PWM.o ./Navigation.o ./SONAR.o ./STM_Interrupt.o ./UART.o 
+Finished building target: BOT_CONTROL.elf
+ 
+Invoking: Print Size
+elfsize  "BOT_CONTROL.elf"
+Total sizes:
+ROM: 0x7747 (30535) = code: 0x612c (24876) + romdata: 0x161b (5659)
+RAM: 0x9ee5 (40677) = data + bss
+Finished building: BOT_CONTROL.siz
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): ELF size v1.1r8 Build 22011964
+rm Cpu2_Main.src Cpu1_Main.src SONAR.src UART.src Cpu0_Main.src STM_Interrupt.src
+Build started...
+03:15:40 **** Incremental Build of configuration Debug for project BOT_CONTROL ****
+make --output-sync -j12 all 
+Invoking: Print Size
+TASKING VX-toolset for AURIX Development Studio (non-commercial): ELF size v1.1r8 Build 22011964
+elfsize  "BOT_CONTROL.elf"
+Total sizes:
+ROM: 0x7747 (30535) = code: 0x612c (24876) + romdata: 0x161b (5659)
+RAM: 0x9ee5 (40677) = data + bss
+Finished building: BOT_CONTROL.siz
+ 
+Aurix Flasher 2.5.3.0, built on 3/17/2022 7:12:47 PM
+Connected to device... [TRICORE] DAS JTAG SHIELDBUDDY TC375
+::Loading HEX file .......... 
+ ::Warning: The given program file is trying to write on reserved memory addresses, which will be skipped.
+::Erasing Flash memory .......... (Pass)
+::Programming Flash memory .......... (Pass)
+Overall time: 1314 ms
+AurixFlasher Exit Status: Pass
+Flashing was successfull
+Build started...
+03:32:28 **** Incremental Build of configuration Debug for project BOT_CONTROL ****
+make --output-sync -j12 all 
+Building file: ../Cpu1_Main.c
+TASKING VX-toolset for AURIX Development Studio (non-commercial): control program v1.1r8 Build 22011964
+Invoking: TASKING C/C++ Compiler
+cctc -cs --dep-file="Cpu1_Main.d" --misrac-version=2004 -D__CPU__=tc37x "-fC:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Debug/TASKING_C_C___Compiler-Include_paths.opt" --iso=99 --c++14 --language=+volatile --exceptions --anachronisms --fp-model=3 -O0 --tradeoff=4 --compact-max-size=200 -g -Wc-w544 -Wc-w557 -Ctc37x -Y0 -N0 -Z0 -o "Cpu1_Main.src" "../Cpu1_Main.c" && \
+if [ -f "Cpu1_Main.d" ]; then sed.exe -r  -e 's/\b(.+\.o)\b/\/\1/g' -e 's/\\/\//g' -e 's/\/\//\//g' -e 's/"//g' -e 's/([a-zA-Z]:\/)/\L\1/g' -e 's/\d32:/@TARGET_DELIMITER@/g; s/\\\d32/@ESCAPED_SPACE@/g; s/\d32/\\\d32/g; s/@ESCAPED_SPACE@/\\\d32/g; s/@TARGET_DELIMITER@/\d32:/g' "Cpu1_Main.d" > "Cpu1_Main.d_sed" && cp "Cpu1_Main.d_sed" "Cpu1_Main.d" && rm -f "Cpu1_Main.d_sed" 2>/dev/null; else echo 'No dependency file to process';fi
+Finished building: ../Cpu1_Main.c
+ 
+Building file: ../Cpu0_Main.c
+Invoking: TASKING C/C++ Compiler
+cctc -cs --dep-file="Cpu0_Main.d" --misrac-version=2004 -D__CPU__=tc37x "-fC:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Debug/TASKING_C_C___Compiler-Include_paths.opt" --iso=99 --c++14 --language=+volatile --exceptions --anachronisms --fp-model=3 -O0 --tradeoff=4 --compact-max-size=200 -g -Wc-w544 -Wc-w557 -Ctc37x -Y0 -N0 -Z0 -o "Cpu0_Main.src" "../Cpu0_Main.c" && \
+if [ -f "Cpu0_Main.d" ]; then sed.exe -r  -e 's/\b(.+\.o)\b/\/\1/g' -e 's/\\/\//g' -e 's/\/\//\//g' -e 's/"//g' -e 's/([a-zA-Z]:\/)/\L\1/g' -e 's/\d32:/@TARGET_DELIMITER@/g; s/\\\d32/@ESCAPED_SPACE@/g; s/\d32/\\\d32/g; s/@ESCAPED_SPACE@/\\\d32/g; s/@TARGET_DELIMITER@/\d32:/g' "Cpu0_Main.d" > "Cpu0_Main.d_sed" && cp "Cpu0_Main.d_sed" "Cpu0_Main.d" && rm -f "Cpu0_Main.d_sed" 2>/dev/null; else echo 'No dependency file to process';fi
+Finished building: ../Cpu0_Main.c
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): control program v1.1r8 Build 22011964
+Building file: ../SONAR.c
+Invoking: TASKING C/C++ Compiler
+cctc -cs --dep-file="SONAR.d" --misrac-version=2004 -D__CPU__=tc37x "-fC:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Debug/TASKING_C_C___Compiler-Include_paths.opt" --iso=99 --c++14 --language=+volatile --exceptions --anachronisms --fp-model=3 -O0 --tradeoff=4 --compact-max-size=200 -g -Wc-w544 -Wc-w557 -Ctc37x -Y0 -N0 -Z0 -o "SONAR.src" "../SONAR.c" && \
+if [ -f "SONAR.d" ]; then sed.exe -r  -e 's/\b(.+\.o)\b/\/\1/g' -e 's/\\/\//g' -e 's/\/\//\//g' -e 's/"//g' -e 's/([a-zA-Z]:\/)/\L\1/g' -e 's/\d32:/@TARGET_DELIMITER@/g; s/\\\d32/@ESCAPED_SPACE@/g; s/\d32/\\\d32/g; s/@ESCAPED_SPACE@/\\\d32/g; s/@TARGET_DELIMITER@/\d32:/g' "SONAR.d" > "SONAR.d_sed" && cp "SONAR.d_sed" "SONAR.d" && rm -f "SONAR.d_sed" 2>/dev/null; else echo 'No dependency file to process';fi
+Finished building: ../SONAR.c
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): control program v1.1r8 Build 22011964
+Building file: ../STM_Interrupt.c
+Invoking: TASKING C/C++ Compiler
+cctc -cs --dep-file="STM_Interrupt.d" --misrac-version=2004 -D__CPU__=tc37x "-fC:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Debug/TASKING_C_C___Compiler-Include_paths.opt" --iso=99 --c++14 --language=+volatile --exceptions --anachronisms --fp-model=3 -O0 --tradeoff=4 --compact-max-size=200 -g -Wc-w544 -Wc-w557 -Ctc37x -Y0 -N0 -Z0 -o "STM_Interrupt.src" "../STM_Interrupt.c" && \
+if [ -f "STM_Interrupt.d" ]; then sed.exe -r  -e 's/\b(.+\.o)\b/\/\1/g' -e 's/\\/\//g' -e 's/\/\//\//g' -e 's/"//g' -e 's/([a-zA-Z]:\/)/\L\1/g' -e 's/\d32:/@TARGET_DELIMITER@/g; s/\\\d32/@ESCAPED_SPACE@/g; s/\d32/\\\d32/g; s/@ESCAPED_SPACE@/\\\d32/g; s/@TARGET_DELIMITER@/\d32:/g' "STM_Interrupt.d" > "STM_Interrupt.d_sed" && cp "STM_Interrupt.d_sed" "STM_Interrupt.d" && rm -f "STM_Interrupt.d_sed" 2>/dev/null; else echo 'No dependency file to process';fi
+Finished building: ../STM_Interrupt.c
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): control program v1.1r8 Build 22011964
+ctc W560: ["../STM_Interrupt.c" 64/55] possible truncation at implicit conversion to type "unsigned long int"
+ctc W560: ["../STM_Interrupt.c" 76/21] possible truncation at implicit conversion to type "unsigned long int"
+0 errors, 2 warnings
+Building file: ../UART.c
+Invoking: TASKING C/C++ Compiler
+cctc -cs --dep-file="UART.d" --misrac-version=2004 -D__CPU__=tc37x "-fC:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Debug/TASKING_C_C___Compiler-Include_paths.opt" --iso=99 --c++14 --language=+volatile --exceptions --anachronisms --fp-model=3 -O0 --tradeoff=4 --compact-max-size=200 -g -Wc-w544 -Wc-w557 -Ctc37x -Y0 -N0 -Z0 -o "UART.src" "../UART.c" && \
+if [ -f "UART.d" ]; then sed.exe -r  -e 's/\b(.+\.o)\b/\/\1/g' -e 's/\\/\//g' -e 's/\/\//\//g' -e 's/"//g' -e 's/([a-zA-Z]:\/)/\L\1/g' -e 's/\d32:/@TARGET_DELIMITER@/g; s/\\\d32/@ESCAPED_SPACE@/g; s/\d32/\\\d32/g; s/@ESCAPED_SPACE@/\\\d32/g; s/@TARGET_DELIMITER@/\d32:/g' "UART.d" > "UART.d_sed" && cp "UART.d_sed" "UART.d" && rm -f "UART.d_sed" 2>/dev/null; else echo 'No dependency file to process';fi
+Finished building: ../UART.c
+TASKING VX-toolset for AURIX Development Studio (non-commercial): control program v1.1r8 Build 22011964
+ 
+Building file: Cpu1_Main.src
+Invoking: TASKING Assembler
+astc -Og -Os --no-warnings= --error-limit=42 -o  "Cpu1_Main.o" "Cpu1_Main.src"
+Finished building: Cpu1_Main.src
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): assembler v1.1r8 Build 22011964
+Building file: Cpu0_Main.src
+Invoking: TASKING Assembler
+astc -Og -Os --no-warnings= --error-limit=42 -o  "Cpu0_Main.o" "Cpu0_Main.src"
+Finished building: Cpu0_Main.src
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): assembler v1.1r8 Build 22011964
+Building file: SONAR.src
+Invoking: TASKING Assembler
+astc -Og -Os --no-warnings= --error-limit=42 -o  "SONAR.o" "SONAR.src"
+Finished building: SONAR.src
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): assembler v1.1r8 Build 22011964
+Building file: STM_Interrupt.src
+Invoking: TASKING Assembler
+astc -Og -Os --no-warnings= --error-limit=42 -o  "STM_Interrupt.o" "STM_Interrupt.src"
+Finished building: STM_Interrupt.src
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): assembler v1.1r8 Build 22011964
+Building file: UART.src
+Invoking: TASKING Assembler
+astc -Og -Os --no-warnings= --error-limit=42 -o  "UART.o" "UART.src"
+Finished building: UART.src
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): assembler v1.1r8 Build 22011964
+Building target: BOT_CONTROL.elf
+Invoking: TASKING Linker
+TASKING VX-toolset for AURIX Development Studio (non-commercial): control program v1.1r8 Build 22011964
+cctc --lsl-file="../Lcf_Tasking_Tricore_Tc.lsl" -Wl-Oc -Wl-OL -Wl-Ot -Wl-Ox -Wl-Oy -Wl--map-file="BOT_CONTROL.map" -Wl-mc -Wl-mf -Wl-mi -Wl-mk -Wl-ml -Wl-mm -Wl-md -Wl-mr -Wl-mu --no-warnings= -Wl--error-limit=42 -lcs_fpu -lfp_fpu -lrt --lsl-core=vtc --exceptions --strict --anachronisms --force-c++ -Ctc37x -o"BOT_CONTROL.elf" -Wl-o"BOT_CONTROL.hex:IHEX"  ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxAsclin_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxCan_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxCcu6_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxDmu_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxEdsadc_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxEray_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxEvadc_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxGeth_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxGpt12_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxGtm_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxI2c_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxMsc_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxPms_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxPort_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxPsi5_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxPsi5s_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxQspi_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxScu_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxSent_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxSmu_PinMap.o  ./Libraries/iLLD/TC37A/Tricore/_Lib/DataHandling/Ifx_CircularBuffer.asm.o ./Libraries/iLLD/TC37A/Tricore/_Lib/DataHandling/Ifx_CircularBuffer.o ./Libraries/iLLD/TC37A/Tricore/_Lib/DataHandling/Ifx_Fifo.o  ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxAsclin_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxCan_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxCcu6_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxCpu_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxDma_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxEray_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxEvadc_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxFlash_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxGeth_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxGtm_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxHssl_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxI2c_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxMsc_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxMtu_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxPort_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxPsi5_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxQspi_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxScu_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxSent_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxSmu_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxSrc_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxStm_cfg.o  ./Libraries/iLLD/TC37A/Tricore/Stm/Std/IfxStm.o  ./Libraries/iLLD/TC37A/Tricore/Src/Std/IfxSrc.o  ./Libraries/iLLD/TC37A/Tricore/Scu/Std/IfxScuCcu.o ./Libraries/iLLD/TC37A/Tricore/Scu/Std/IfxScuEru.o ./Libraries/iLLD/TC37A/Tricore/Scu/Std/IfxScuLbist.o ./Libraries/iLLD/TC37A/Tricore/Scu/Std/IfxScuRcu.o ./Libraries/iLLD/TC37A/Tricore/Scu/Std/IfxScuWdt.o  ./Libraries/iLLD/TC37A/Tricore/Port/Std/IfxPort.o  ./Libraries/iLLD/TC37A/Tricore/Pms/Std/IfxPmsEvr.o ./Libraries/iLLD/TC37A/Tricore/Pms/Std/IfxPmsPm.o  ./Libraries/iLLD/TC37A/Tricore/Mtu/Std/IfxMtu.o  ./Libraries/iLLD/TC37A/Tricore/Gtm/Tom/Pwm/IfxGtm_Tom_Pwm.o  ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Atom.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Cmu.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Dpll.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Dtm.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Psm.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Spe.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Tbu.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Tim.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Tom.o  ./Libraries/iLLD/TC37A/Tricore/Cpu/Trap/IfxCpu_Trap.o  ./Libraries/iLLD/TC37A/Tricore/Cpu/Std/IfxCpu.o  ./Libraries/iLLD/TC37A/Tricore/Cpu/Irq/IfxCpu_Irq.o  ./Libraries/iLLD/TC37A/Tricore/Asclin/Std/IfxAsclin.o  ./Libraries/iLLD/TC37A/Tricore/Asclin/Asc/IfxAsclin_Asc.o  ./Libraries/Service/CpuGeneric/SysSe/Comm/Ifx_Console.o ./Libraries/Service/CpuGeneric/SysSe/Comm/Ifx_Shell.o  ./Libraries/Service/CpuGeneric/SysSe/Bsp/Assert.o ./Libraries/Service/CpuGeneric/SysSe/Bsp/Bsp.o  ./Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.o ./Libraries/Service/CpuGeneric/StdIf/IfxStdIf_Pos.o ./Libraries/Service/CpuGeneric/StdIf/IfxStdIf_PwmHl.o ./Libraries/Service/CpuGeneric/StdIf/IfxStdIf_Timer.o  ./Libraries/Infra/Ssw/TC37A/Tricore/Ifx_Ssw_Infra.o ./Libraries/Infra/Ssw/TC37A/Tricore/Ifx_Ssw_Tc0.o ./Libraries/Infra/Ssw/TC37A/Tricore/Ifx_Ssw_Tc1.o ./Libraries/Infra/Ssw/TC37A/Tricore/Ifx_Ssw_Tc2.o  ./Libraries/Infra/Platform/Tricore/Compilers/CompilerDcc.o ./Libraries/Infra/Platform/Tricore/Compilers/CompilerGhs.o ./Libraries/Infra/Platform/Tricore/Compilers/CompilerGnuc.o ./Libraries/Infra/Platform/Tricore/Compilers/CompilerTasking.o  ./Configurations/Debug/sync_on_halt.o  ./Configurations/Ifx_Cfg_Ssw.o ./Configurations/Ifx_Cfg_SswBmhd.o  ./Cpu0_Main.o ./Cpu1_Main.o ./Cpu2_Main.o ./GTM_PWM.o ./Navigation.o ./SONAR.o ./STM_Interrupt.o ./UART.o 
+Finished building target: BOT_CONTROL.elf
+ 
+Invoking: Print Size
+elfsize  "BOT_CONTROL.elf"
+Total sizes:
+ROM: 0x774f (30543) = code: 0x612c (24876) + romdata: 0x1623 (5667)
+RAM: 0x9ee5 (40677) = data + bss
+Finished building: BOT_CONTROL.siz
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): ELF size v1.1r8 Build 22011964
+rm Cpu1_Main.src SONAR.src UART.src Cpu0_Main.src STM_Interrupt.src
+Build started...
+03:34:17 **** Incremental Build of configuration Debug for project BOT_CONTROL ****
+make --output-sync -j12 all 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): control program v1.1r8 Build 22011964
+Building file: ../STM_Interrupt.c
+Invoking: TASKING C/C++ Compiler
+ctc W560: ["../STM_Interrupt.c" 64/55] possible truncation at implicit conversion to type "unsigned long int"
+ctc W560: ["../STM_Interrupt.c" 76/21] possible truncation at implicit conversion to type "unsigned long int"
+0 errors, 2 warnings
+cctc -cs --dep-file="STM_Interrupt.d" --misrac-version=2004 -D__CPU__=tc37x "-fC:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Debug/TASKING_C_C___Compiler-Include_paths.opt" --iso=99 --c++14 --language=+volatile --exceptions --anachronisms --fp-model=3 -O0 --tradeoff=4 --compact-max-size=200 -g -Wc-w544 -Wc-w557 -Ctc37x -Y0 -N0 -Z0 -o "STM_Interrupt.src" "../STM_Interrupt.c" && \
+if [ -f "STM_Interrupt.d" ]; then sed.exe -r  -e 's/\b(.+\.o)\b/\/\1/g' -e 's/\\/\//g' -e 's/\/\//\//g' -e 's/"//g' -e 's/([a-zA-Z]:\/)/\L\1/g' -e 's/\d32:/@TARGET_DELIMITER@/g; s/\\\d32/@ESCAPED_SPACE@/g; s/\d32/\\\d32/g; s/@ESCAPED_SPACE@/\\\d32/g; s/@TARGET_DELIMITER@/\d32:/g' "STM_Interrupt.d" > "STM_Interrupt.d_sed" && cp "STM_Interrupt.d_sed" "STM_Interrupt.d" && rm -f "STM_Interrupt.d_sed" 2>/dev/null; else echo 'No dependency file to process';fi
+Finished building: ../STM_Interrupt.c
+ 
+Building file: STM_Interrupt.src
+Invoking: TASKING Assembler
+astc -Og -Os --no-warnings= --error-limit=42 -o  "STM_Interrupt.o" "STM_Interrupt.src"
+Finished building: STM_Interrupt.src
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): assembler v1.1r8 Build 22011964
+Building target: BOT_CONTROL.elf
+Invoking: TASKING Linker
+TASKING VX-toolset for AURIX Development Studio (non-commercial): control program v1.1r8 Build 22011964
+cctc --lsl-file="../Lcf_Tasking_Tricore_Tc.lsl" -Wl-Oc -Wl-OL -Wl-Ot -Wl-Ox -Wl-Oy -Wl--map-file="BOT_CONTROL.map" -Wl-mc -Wl-mf -Wl-mi -Wl-mk -Wl-ml -Wl-mm -Wl-md -Wl-mr -Wl-mu --no-warnings= -Wl--error-limit=42 -lcs_fpu -lfp_fpu -lrt --lsl-core=vtc --exceptions --strict --anachronisms --force-c++ -Ctc37x -o"BOT_CONTROL.elf" -Wl-o"BOT_CONTROL.hex:IHEX"  ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxAsclin_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxCan_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxCcu6_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxDmu_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxEdsadc_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxEray_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxEvadc_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxGeth_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxGpt12_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxGtm_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxI2c_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxMsc_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxPms_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxPort_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxPsi5_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxPsi5s_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxQspi_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxScu_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxSent_PinMap.o ./Libraries/iLLD/TC37A/Tricore/_PinMap/IfxSmu_PinMap.o  ./Libraries/iLLD/TC37A/Tricore/_Lib/DataHandling/Ifx_CircularBuffer.asm.o ./Libraries/iLLD/TC37A/Tricore/_Lib/DataHandling/Ifx_CircularBuffer.o ./Libraries/iLLD/TC37A/Tricore/_Lib/DataHandling/Ifx_Fifo.o  ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxAsclin_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxCan_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxCcu6_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxCpu_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxDma_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxEray_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxEvadc_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxFlash_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxGeth_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxGtm_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxHssl_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxI2c_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxMsc_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxMtu_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxPort_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxPsi5_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxQspi_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxScu_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxSent_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxSmu_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxSrc_cfg.o ./Libraries/iLLD/TC37A/Tricore/_Impl/IfxStm_cfg.o  ./Libraries/iLLD/TC37A/Tricore/Stm/Std/IfxStm.o  ./Libraries/iLLD/TC37A/Tricore/Src/Std/IfxSrc.o  ./Libraries/iLLD/TC37A/Tricore/Scu/Std/IfxScuCcu.o ./Libraries/iLLD/TC37A/Tricore/Scu/Std/IfxScuEru.o ./Libraries/iLLD/TC37A/Tricore/Scu/Std/IfxScuLbist.o ./Libraries/iLLD/TC37A/Tricore/Scu/Std/IfxScuRcu.o ./Libraries/iLLD/TC37A/Tricore/Scu/Std/IfxScuWdt.o  ./Libraries/iLLD/TC37A/Tricore/Port/Std/IfxPort.o  ./Libraries/iLLD/TC37A/Tricore/Pms/Std/IfxPmsEvr.o ./Libraries/iLLD/TC37A/Tricore/Pms/Std/IfxPmsPm.o  ./Libraries/iLLD/TC37A/Tricore/Mtu/Std/IfxMtu.o  ./Libraries/iLLD/TC37A/Tricore/Gtm/Tom/Pwm/IfxGtm_Tom_Pwm.o  ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Atom.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Cmu.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Dpll.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Dtm.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Psm.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Spe.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Tbu.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Tim.o ./Libraries/iLLD/TC37A/Tricore/Gtm/Std/IfxGtm_Tom.o  ./Libraries/iLLD/TC37A/Tricore/Cpu/Trap/IfxCpu_Trap.o  ./Libraries/iLLD/TC37A/Tricore/Cpu/Std/IfxCpu.o  ./Libraries/iLLD/TC37A/Tricore/Cpu/Irq/IfxCpu_Irq.o  ./Libraries/iLLD/TC37A/Tricore/Asclin/Std/IfxAsclin.o  ./Libraries/iLLD/TC37A/Tricore/Asclin/Asc/IfxAsclin_Asc.o  ./Libraries/Service/CpuGeneric/SysSe/Comm/Ifx_Console.o ./Libraries/Service/CpuGeneric/SysSe/Comm/Ifx_Shell.o  ./Libraries/Service/CpuGeneric/SysSe/Bsp/Assert.o ./Libraries/Service/CpuGeneric/SysSe/Bsp/Bsp.o  ./Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.o ./Libraries/Service/CpuGeneric/StdIf/IfxStdIf_Pos.o ./Libraries/Service/CpuGeneric/StdIf/IfxStdIf_PwmHl.o ./Libraries/Service/CpuGeneric/StdIf/IfxStdIf_Timer.o  ./Libraries/Infra/Ssw/TC37A/Tricore/Ifx_Ssw_Infra.o ./Libraries/Infra/Ssw/TC37A/Tricore/Ifx_Ssw_Tc0.o ./Libraries/Infra/Ssw/TC37A/Tricore/Ifx_Ssw_Tc1.o ./Libraries/Infra/Ssw/TC37A/Tricore/Ifx_Ssw_Tc2.o  ./Libraries/Infra/Platform/Tricore/Compilers/CompilerDcc.o ./Libraries/Infra/Platform/Tricore/Compilers/CompilerGhs.o ./Libraries/Infra/Platform/Tricore/Compilers/CompilerGnuc.o ./Libraries/Infra/Platform/Tricore/Compilers/CompilerTasking.o  ./Configurations/Debug/sync_on_halt.o  ./Configurations/Ifx_Cfg_Ssw.o ./Configurations/Ifx_Cfg_SswBmhd.o  ./Cpu0_Main.o ./Cpu1_Main.o ./Cpu2_Main.o ./GTM_PWM.o ./Navigation.o ./SONAR.o ./STM_Interrupt.o ./UART.o 
+Finished building target: BOT_CONTROL.elf
+ 
+Invoking: Print Size
+elfsize  "BOT_CONTROL.elf"
+Total sizes:
+ROM: 0x774f (30543) = code: 0x612c (24876) + romdata: 0x1623 (5667)
+RAM: 0x9ee5 (40677) = data + bss
+Finished building: BOT_CONTROL.siz
+ 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): ELF size v1.1r8 Build 22011964
+rm STM_Interrupt.src
+Build started...
+03:34:22 **** Incremental Build of configuration Debug for project BOT_CONTROL ****
+make --output-sync -j12 all 
+Invoking: Print Size
+TASKING VX-toolset for AURIX Development Studio (non-commercial): ELF size v1.1r8 Build 22011964
+elfsize  "BOT_CONTROL.elf"
+Total sizes:
+ROM: 0x774f (30543) = code: 0x612c (24876) + romdata: 0x1623 (5667)
+RAM: 0x9ee5 (40677) = data + bss
+Finished building: BOT_CONTROL.siz
+ 
+Aurix Flasher 2.5.3.0, built on 3/17/2022 7:12:47 PM
+Connected to device... [TRICORE] DAS JTAG SHIELDBUDDY TC375
+::Loading HEX file .......... 
+ ::Warning: The given program file is trying to write on reserved memory addresses, which will be skipped.
+::Erasing Flash memory .......... (Pass)
+::Programming Flash memory .......... (Pass)
+Overall time: 1315 ms
+AurixFlasher Exit Status: Pass
+Flashing was successfull
+Build started...
+03:36:07 **** Incremental Build of configuration Debug for project BOT_CONTROL ****
+make --output-sync -j12 all 
+Invoking: Print Size
+TASKING VX-toolset for AURIX Development Studio (non-commercial): ELF size v1.1r8 Build 22011964
+elfsize  "BOT_CONTROL.elf"
+Total sizes:
+ROM: 0x774f (30543) = code: 0x612c (24876) + romdata: 0x1623 (5667)
+RAM: 0x9ee5 (40677) = data + bss
+Finished building: BOT_CONTROL.siz
+ 
+Aurix Flasher 2.5.3.0, built on 3/17/2022 7:12:47 PM
+Connected to device... [TRICORE] DAS JTAG SHIELDBUDDY TC375
+::Loading HEX file .......... 
+ ::Warning: The given program file is trying to write on reserved memory addresses, which will be skipped.
+::Erasing Flash memory .......... (Pass)
+::Programming Flash memory .......... (Pass)
+Overall time: 1305 ms
+AurixFlasher Exit Status: Pass
+Flashing was successfull

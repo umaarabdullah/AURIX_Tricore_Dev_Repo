@@ -1,7 +1,7 @@
 /*
  * Cpu0_Main.c
  *
- *  Created on: May 7, 2023
+ *  Created on: Apr 1, 2023
  *      Author: Umaar
  */
 
@@ -18,8 +18,15 @@
 #include "SONAR.h"
 #include "UART.h"
 
-#define WAIT_TIME   2000
-int duty=90;
+/*********************************************************************************************************************/
+/*------------------------------------------------------Macros-------------------------------------------------------*/
+/*********************************************************************************************************************/
+#define WAIT_TIME   1000
+
+/*********************************************************************************************************************/
+/*------------------------------------------------------Global Variables-------------------------------------------------------*/
+/*********************************************************************************************************************/
+int duty = 90;                          /* The PWM signal duty cycle represents the percentage of time the signal remains in the logic high state. */
 
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
@@ -37,21 +44,24 @@ void core0_main(void)
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
     
-    initGtmPwm();
-    initNavigation();
+    initGtmPwm();                   /* initialize pwm for h-bridge enable pins */
+    initNavigation();               /* initialize in pins for h-bridge input pins for navigation */
+    initSonar();                    /* Initialize the sonar sensor module*/
+    initPeripherals();              /* Initialize the STM module */
+
+    /* Set the duty cycle. Here the argument duty cycle is in percentage */
     setDutyCycleEn1(duty);
     setDutyCycleEn2(duty);
 
+    // Get ticks for waitTime
     Ifx_TickTime ticks = IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, WAIT_TIME);
-
-    SONAR_INIT();       /* Initialize the sonar sensor module*/
-    initPeripherals();  /* Initialize the STM module */
 
     while(1)
     {
-        double sonar_dist = SONAR_MEASURE_DISTANCE();
+        double sonar_dist = SONAR_MEASURE_DISTANCE();       // API for getting distance calculated with the help of ultrasonic sensor
         IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\rDistance: %lfcm\n\r",sonar_dist);
 
+        // Repeatedly set duty cycle for changing speed
         setDutyCycleEn1(duty);
         setDutyCycleEn2(duty);
 

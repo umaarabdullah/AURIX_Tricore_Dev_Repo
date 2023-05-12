@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="elapsed_time"/>
+		<item key="selection" value="IfxStm_get"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="IfxStm_get"/>
+			<item value="IfxStm_Comparator_0"/>
+			<item value="IfxStm_getCompare"/>
+			<item value="compare"/>
+			<item value="uscount"/>
 			<item value="ping"/>
 			<item value="IfxStm_getMicrosecond"/>
 			<item value="g_ticksForDelayms"/>
@@ -16,14 +21,15 @@
 			<item value="IfxStm_enableModule"/>
 		</list>
 		<list key="replacehistory">
+			<item value="__uscount"/>
 			<item value="elapsed_time"/>
 			<item value="g_ticksForDelayus"/>
 			<item value="g_ticksForDelayms"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="364"/>
-		<item key="DIALOG_Y_ORIGIN" value="168"/>
+		<item key="DIALOG_X_ORIGIN" value="1274"/>
+		<item key="DIALOG_Y_ORIGIN" value="213"/>
 		<item key="DIALOG_WIDTH" value="511"/>
 		<item key="DIALOG_HEIGHT" value="523"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

@@ -75,7 +75,7 @@ void SEND_PULSE(void){
     IfxPort_setPinLow(TRIG);    // Set Trig pin low
 }
 
-/* Function to measure the distance to an object using the HC-SR04 */
+/* Function to measure the distance (Unit: cm) to an object using the HC-SR04 */
 double SONAR_MEASURE_DISTANCE(void){
 
     int timeout = 1000000;  // Timeout in microseconds
@@ -100,9 +100,9 @@ double SONAR_MEASURE_DISTANCE(void){
     end_time = getTime();
     elapsed_time = (end_time - start_time);     // not 100% accurate need to account for cycle time. Accurate upto 10us
 
-    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\rstart_Time: %dus\n\r",start_time);
-    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\rend_Time: %dus\n\r",end_time);
-    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\relapsed_time: %dus\n\r",elapsed_time);
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r start_Time: %dus\n\r",start_time);
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r end_Time: %dus\n\r",end_time);
+    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar ECHO time: %dus\n\r",elapsed_time);
 
     // Calculate distance from elapsed time
     distance = (double) (((double)elapsed_time * Speed_of_Sound) / (double)(2*1000000))*(double)100;

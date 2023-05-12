@@ -21,7 +21,8 @@
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
 /*********************************************************************************************************************/
-#define WAIT_TIME   1000
+#define WAIT_TIME   2000
+#define THRESHOLD_DISTANCE 10               /* Object within 10cm will defined as obstacle detected */
 
 /*********************************************************************************************************************/
 /*------------------------------------------------------Global Variables-------------------------------------------------------*/
@@ -59,16 +60,20 @@ void core0_main(void)
     while(1)
     {
         double sonar_dist = SONAR_MEASURE_DISTANCE();       // API for getting distance calculated with the help of ultrasonic sensor
-        IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\rDistance: %lfcm\n\r",sonar_dist);
+        IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Distance: %lfcm\n\r",sonar_dist);
 
         // Repeatedly set duty cycle for changing speed
         setDutyCycleEn1(duty);
         setDutyCycleEn2(duty);
 
         // g_ascStandardInterface has to be passed as io object
-        IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\rCurrent PWM Duty Cycle: %d\n\r", duty);
+//        IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Current PWM Duty Cycle: %d\n\r", duty);
 
-//        forward();
+//        if(sonar_dist > THRESHOLD_DISTANCE)
+//            forward();
+//        else
+//            stop();
+
         waitTime(ticks);
 //        stop();
 //        waitTime(ticks);

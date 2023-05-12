@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BOT_CONTROL/Sonar_Based_Object_Detection&apos; to &apos;Sonar_Based_Object_Avoidance&apos;" description="Rename resource &apos;Sonar_Based_Object_Detection&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Sonar_Based_Object_Detection" name="Sonar_Based_Object_Avoidance" stamp="1683906446016" updateReferences="true"/>
+</session>

@@ -10,7 +10,9 @@
 
 
 void initSonar(void);
-double SONAR_MEASURE_DISTANCE(void);                /* Distance (Unit: cm) API of Ultrasonic sensor interface. Returns a floating point number*/
+
+/* Ultrasonic Sensor Functions */
+double read_distance_sonar(void);
 
 
 #endif /* SONAR_H_ */

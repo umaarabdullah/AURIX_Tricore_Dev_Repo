@@ -100,3 +100,5 @@ c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Libraries/Inf
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.h :
 /Cpu0_Main.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Libraries/Service/CpuGeneric/StdIf/IfxStdIf.h
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/BOT_CONTROL/Libraries/Service/CpuGeneric/StdIf/IfxStdIf.h :
+/Cpu0_Main.o :	../Ultrasonic_Based_Pid_Control.h
+../Ultrasonic_Based_Pid_Control.h :

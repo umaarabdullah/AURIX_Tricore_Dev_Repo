@@ -11,7 +11,8 @@ C_SRCS += \
 ../Navigation.c \
 ../SONAR.c \
 ../STM_Interrupt.c \
-../UART.c 
+../UART.c \
+../Ultrasonic_Based_Pid_Control.c 
 
 COMPILED_SRCS += \
 ./Cpu0_Main.src \
@@ -21,7 +22,8 @@ COMPILED_SRCS += \
 ./Navigation.src \
 ./SONAR.src \
 ./STM_Interrupt.src \
-./UART.src 
+./UART.src \
+./Ultrasonic_Based_Pid_Control.src 
 
 C_DEPS += \
 ./Cpu0_Main.d \
@@ -31,7 +33,8 @@ C_DEPS += \
 ./Navigation.d \
 ./SONAR.d \
 ./STM_Interrupt.d \
-./UART.d 
+./UART.d \
+./Ultrasonic_Based_Pid_Control.d 
 
 OBJS += \
 ./Cpu0_Main.o \
@@ -41,7 +44,8 @@ OBJS += \
 ./Navigation.o \
 ./SONAR.o \
 ./STM_Interrupt.o \
-./UART.o 
+./UART.o \
+./Ultrasonic_Based_Pid_Control.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -64,7 +68,7 @@ OBJS += \
 clean: clean--2e-
 
 clean--2e-:
-	-$(RM) ./Cpu0_Main.d ./Cpu0_Main.o ./Cpu0_Main.src ./Cpu1_Main.d ./Cpu1_Main.o ./Cpu1_Main.src ./Cpu2_Main.d ./Cpu2_Main.o ./Cpu2_Main.src ./GTM_PWM.d ./GTM_PWM.o ./GTM_PWM.src ./Navigation.d ./Navigation.o ./Navigation.src ./SONAR.d ./SONAR.o ./SONAR.src ./STM_Interrupt.d ./STM_Interrupt.o ./STM_Interrupt.src ./UART.d ./UART.o ./UART.src
+	-$(RM) ./Cpu0_Main.d ./Cpu0_Main.o ./Cpu0_Main.src ./Cpu1_Main.d ./Cpu1_Main.o ./Cpu1_Main.src ./Cpu2_Main.d ./Cpu2_Main.o ./Cpu2_Main.src ./GTM_PWM.d ./GTM_PWM.o ./GTM_PWM.src ./Navigation.d ./Navigation.o ./Navigation.src ./SONAR.d ./SONAR.o ./SONAR.src ./STM_Interrupt.d ./STM_Interrupt.o ./STM_Interrupt.src ./UART.d ./UART.o ./UART.src ./Ultrasonic_Based_Pid_Control.d ./Ultrasonic_Based_Pid_Control.o ./Ultrasonic_Based_Pid_Control.src
 
 .PHONY: clean--2e-
 

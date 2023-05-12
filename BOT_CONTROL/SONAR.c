@@ -75,11 +75,14 @@ void SEND_PULSE(void){
     IfxPort_setPinLow(TRIG);    // Set Trig pin low
 }
 
-/* Function to measure the distance (Unit: cm) to an object using the HC-SR04 */
-double SONAR_MEASURE_DISTANCE(void){
+/*
+ * Function to read the distance from the ultrasonic sensor
+ * Return the distance in centimeters
+*/
+double read_distance_sonar(void){
 
     int timeout = 1000000;  // Timeout in microseconds
-    uint64 start_time, end_time, elapsed_time;
+    uint64 start_time = 0, end_time = 0, elapsed_time = 0;
 
     // Send a pulse to the HC-SR04
     SEND_PULSE();
@@ -100,10 +103,12 @@ double SONAR_MEASURE_DISTANCE(void){
     end_time = getTime();
     elapsed_time = (end_time - start_time);     // not 100% accurate need to account for cycle time. Accurate upto 10us
 
-//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r start_Time: %dus\n\r",start_time);
-//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r end_Time: %dus\n\r",end_time);
-    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar ECHO time: %dus\n\r",elapsed_time);
-
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r start_Time: %llu us\n\r",start_time);
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r end_Time: %llu us\n\r",end_time);
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar ECHO time: %llu us\n\r",elapsed_time);
+//elapsed(since)
+    if(elapsed_time <= 0)
+        return 0.0;
     // Calculate distance from elapsed time
     distance = (double) (((double)elapsed_time * Speed_of_Sound) / (double)(2*1000000))*(double)100;
 

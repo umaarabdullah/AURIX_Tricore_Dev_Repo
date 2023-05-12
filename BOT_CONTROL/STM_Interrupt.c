@@ -28,7 +28,7 @@
 /*********************************************************************************************************************/
 IfxStm_CompareConfig g_STMConf;                                 /* STM configuration structure                      */
 Ifx_TickTime g_ticksForDelayus;                                 /* Variable to store the number of ticks to wait    */
-sint32 stm_clock_frequency;                                     /* STM Clock frequency in HZ */
+uint32 stm_clock_frequency;                                     /* STM Clock frequency in HZ */
 uint32 stm_comp_reg_val;                                        /* STM Comparator_0 register value */
 
 /*********************************************************************************************************************/
@@ -77,11 +77,11 @@ uint64 getTime(void){
 
 void isrSTM(void)
 {
+    __uscount+=TIMER_INT_TIME;
+
     // comparator value gets updated with fixed number of ticks at each interrupt *** ticks = g_ticksForDelayus ***
     stm_comp_reg_val = IfxStm_getCompare(STM, IfxStm_Comparator_0);
 //    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r updated compare register value: %u \n\r",stm_comp_reg_val);
-
-    __uscount+=TIMER_INT_TIME;
 
     /* Update the compare register value that will trigger the next interrupt and toggle the LED */
     IfxStm_increaseCompare(STM, g_STMConf.comparator, g_ticksForDelayus);
@@ -116,7 +116,7 @@ void initPeripherals(void)
     /* Initialize time constant for microsecond delay */
     g_ticksForDelayus = IfxStm_getTicksFromMicroseconds(BSP_DEFAULT_TIMER, TIMER_INT_TIME);
 
-    stm_clock_frequency = (sint32)IfxStm_getFrequency(STM);
+    stm_clock_frequency = (uint32)IfxStm_getFrequency(STM);
 //    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r timer freqency: %dhz\n\r",stm_clock_frequency);
 //    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r timer ticks to interrupt: %d\n\r",g_ticksForDelayus);
 

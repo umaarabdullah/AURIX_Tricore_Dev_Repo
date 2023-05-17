@@ -25,7 +25,7 @@
 #define ECHO_SONAR_4         &MODULE_P00,5      /* Sonar_4 Echo Pin 35 */
 #define TRIG_SONAR_4         &MODULE_P00,12      /* Sonar_4 Trig Pin 34 */
 
-#define PULSE_TIME   10                 /* 10us */
+#define PULSE_TIME              10                 /* 10us */
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Global variables--------------------------------------------------*/
@@ -168,7 +168,7 @@ double read_distance_sonar_1(void){
 
     // Get pulseIn time
     end_time = getTime();
-    elapsed_time = (end_time - start_time);     // not 100% accurate need to account for cycle time. Accurate upto 10us
+    elapsed_time = (end_time - start_time); 
 
 //    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r start_Time: %llu us\n\r",start_time);
 //    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r end_Time: %llu us\n\r",end_time);
@@ -205,12 +205,8 @@ double read_distance_sonar_2(void){
 
     // Get pulseIn time
     end_time = getTime();
-    elapsed_time = (end_time - start_time);     // not 100% accurate need to account for cycle time. Accurate upto 10us
+    elapsed_time = (end_time - start_time);     
 
-//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r start_Time: %llu us\n\r",start_time);
-//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r end_Time: %llu us\n\r",end_time);
-//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar ECHO time: %llu us\n\r",elapsed_time);
-//elapsed(since)
     if(elapsed_time <= 0)
         return 0.0;
     // Calculate distance from elapsed time
@@ -242,12 +238,8 @@ double read_distance_sonar_3(void){
 
     // Get pulseIn time
     end_time = getTime();
-    elapsed_time = (end_time - start_time);     // not 100% accurate need to account for cycle time. Accurate upto 10us
+    elapsed_time = (end_time - start_time);    
 
-//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r start_Time: %llu us\n\r",start_time);
-//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r end_Time: %llu us\n\r",end_time);
-//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar ECHO time: %llu us\n\r",elapsed_time);
-//elapsed(since)
     if(elapsed_time <= 0)
         return 0.0;
     // Calculate distance from elapsed time
@@ -279,12 +271,8 @@ double read_distance_sonar_4(void){
 
     // Get pulseIn time
     end_time = getTime();
-    elapsed_time = (end_time - start_time);     // not 100% accurate need to account for cycle time. Accurate upto 10us
+    elapsed_time = (end_time - start_time);   
 
-//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r start_Time: %llu us\n\r",start_time);
-//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r end_Time: %llu us\n\r",end_time);
-//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar ECHO time: %llu us\n\r",elapsed_time);
-//elapsed(since)
     if(elapsed_time <= 0)
         return 0.0;
     // Calculate distance from elapsed time

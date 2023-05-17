@@ -26,8 +26,8 @@
 		<item value="org.eclipse.rcp:4.24.0.v20220607-0700"/>
 	</list>
 	<section name="com.infineon.aurix.buildsystem.importexport.wizard.ui.ImportFromCodeExampleWizardPage">
-		<item key="SELECTED_REPOSITORY" value="100"/>
-		<item key="OUTSIDE_LOCATION" value="C:\Users\Umaar\Documents\GitHub\AURIX_Tricore_Dev_Repo\BOT_CONTROL"/>
+		<item key="SELECTED_REPOSITORY" value="200"/>
+		<item key="OUTSIDE_LOCATION" value="C:\Users\Umaar\AURIX-v1.9.0-workspace\Github\AURIX_Tricore_Dev_Repo"/>
 	</section>
 	<section name="NewWizardAction">
 	</section>

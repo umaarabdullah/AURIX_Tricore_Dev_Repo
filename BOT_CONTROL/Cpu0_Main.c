@@ -17,17 +17,17 @@
 #include "STM_Interrupt.h"
 #include "SONAR.h"
 #include "UART.h"
+#include "Ultrasonic_Based_Pid_Control.h"
 
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
 /*********************************************************************************************************************/
 #define WAIT_TIME   2000
-#define THRESHOLD_DISTANCE 10               /* Object within 10cm will defined as obstacle detected */
 
 /*********************************************************************************************************************/
 /*------------------------------------------------------Global Variables-------------------------------------------------------*/
 /*********************************************************************************************************************/
-int duty = 90;                          /* The PWM signal duty cycle represents the percentage of time the signal remains in the logic high state. */
+int duty = 100;                          /* The PWM signal duty cycle represents the percentage of time the signal remains in the logic high state. */
 
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
@@ -47,7 +47,12 @@ void core0_main(void)
     
     initGtmPwm();                   /* initialize pwm for h-bridge enable pins */
     initNavigation();               /* initialize in pins for h-bridge input pins for navigation */
-    initSonar();                    /* Initialize the sonar sensor module*/
+
+    initSonar_1();                  /* Initialize the sonar sensor module*/
+    initSonar_2();                  /* Initialize the sonar sensor module*/
+    initSonar_3();                  /* Initialize the sonar sensor module*/
+    initSonar_4();                  /* Initialize the sonar sensor module*/
+
     initPeripherals();              /* Initialize the STM module */
 
     /* Set the duty cycle. Here the argument duty cycle is in percentage */
@@ -59,32 +64,21 @@ void core0_main(void)
 
     while(1)
     {
-        double sonar_dist = SONAR_MEASURE_DISTANCE();       // API for getting distance calculated with the help of ultrasonic sensor
-        IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Distance: %lfcm\n\r",sonar_dist);
 
-        // Repeatedly set duty cycle for changing speed
-        setDutyCycleEn1(duty);
-        setDutyCycleEn2(duty);
+        vehicle_control_obstacle_avoidance_mode();
 
-        // g_ascStandardInterface has to be passed as io object
-//        IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Current PWM Duty Cycle: %d\n\r", duty);
-
-//        if(sonar_dist > THRESHOLD_DISTANCE)
-//            forward();
-//        else
-//            stop();
-
-        waitTime(ticks);
+//        forward();
+//        waitTime(ticks);
 //        stop();
 //        waitTime(ticks);
 //
 //        hard_left();
-//        waitTime(2*ticks);
+//        waitTime(ticks);
 //        stop();
 //        waitTime(ticks);
 //
 //        hard_right();
-//        waitTime(2*ticks);
+//        waitTime(ticks);
 //        stop();
 //        waitTime(ticks);
 //

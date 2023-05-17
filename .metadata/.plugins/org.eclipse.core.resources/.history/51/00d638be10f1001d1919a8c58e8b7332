@@ -1,0 +1,16 @@
+/*
+ * Ultrasonic_Based_Pid_Control.h
+ *
+ *  Created on: May 13, 2023
+ *      Author: Umaar
+ */
+
+#ifndef PID_CONTROL_SYSTEM_ULTRASONIC_BASED_PID_CONTROL_H_
+#define PID_CONTROL_SYSTEM_ULTRASONIC_BASED_PID_CONTROL_H_
+
+
+void vehicle_control(void);
+int pid_control(void);
+
+
+#endif /* PID_CONTROL_SYSTEM_ULTRASONIC_BASED_PID_CONTROL_H_ */

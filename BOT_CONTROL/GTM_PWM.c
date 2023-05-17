@@ -13,7 +13,7 @@
 #define ISR_PRIORITY_TOM    20                                      /* Interrupt priority number                    */
 #define EN1                 IfxGtm_TOM1_0N_TOUT7_P02_7_OUT          /*PWM pin 8                                     */
 #define EN2                 IfxGtm_TOM0_3N_TOUT6_P02_6_OUT          /*PWM pin 9                                     */
-#define PWM_PERIOD          50000                                   /* PWM period for the TOM (5khz PWM frequency)  */
+#define PWM_PERIOD          50000                                   /* PWM period for the TOM (2khz PWM frequency)  */
 
 
 /*-------------Global variables-----------------*/

@@ -35,6 +35,9 @@
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
+#include "Bsp.h"
+#include "SONAR.h"
+#include "UART.h"
 
 extern IfxCpu_syncEvent g_cpuSyncEvent;
 

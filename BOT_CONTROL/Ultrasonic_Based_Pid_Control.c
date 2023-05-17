@@ -23,8 +23,7 @@ double integral = 0;
 // Ultrasonic Sensor Constants
 #define OBSTACLE_DISTANCE_THRESHOLD 30.0   // Threshold distance for obstacle detection in centimeters
 
-
-#define WAIT_TIME   700
+#define WAIT_TIME   1000
 
 
 void steer(int direction);
@@ -68,29 +67,51 @@ double calculate_error() {
     return 0.0;
 }
 
-void vehicle_control(void){
+void vehicle_control_obstacle_avoidance_mode(void){
 
     // Read the distance from the ultrasonic sensor
-    double distance = read_distance_sonar();
+    double distance_1 = read_distance_sonar_1();
+    double distance_2 = read_distance_sonar_2();
+    double distance_3 = read_distance_sonar_3();
+    double distance_4 = read_distance_sonar_4();
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_1 Distance: %lfCM\n\r",distance_2);
 
-
-
-    if(distance <= OBSTACLE_DISTANCE_THRESHOLD){
-        // Get ticks for waitTime
-        Ifx_TickTime timeout = IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, WAIT_TIME);
-        // if obstacle detected make a left turn in a right angle
-        // then go forward for 2 seconds
-        // then again a right turn in a right angle
-        steer(-1);
-        waitTime(timeout);
-        steer(0);
-        waitTime(timeout);
-        steer(1);
-        waitTime(timeout);
+    // Leftmost sonar sensor
+    if(distance_1 <= OBSTACLE_DISTANCE_THRESHOLD){
+                IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_1 Obstacle Detected: \n\r");
+        while(distance_1 <= OBSTACLE_DISTANCE_THRESHOLD){
+            distance_1 = read_distance_sonar_1();
+            steer(1);   // steer right
+        }
     }
-    else{
-        steer(0);   // forward
+
+    // Right-Middle sonar sensor
+    if(distance_2 <= OBSTACLE_DISTANCE_THRESHOLD){
+                IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_2 Obstacle Detected: \n\r");
+        while(distance_2 <= OBSTACLE_DISTANCE_THRESHOLD){
+            distance_2 = read_distance_sonar_2();
+            steer(-1);      // steer left
+        }
     }
+    // left-Middle sonar sensor
+    if(distance_3 <= OBSTACLE_DISTANCE_THRESHOLD){
+                IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_3 Obstacle Detected: \n\r");
+        while(distance_3 <= OBSTACLE_DISTANCE_THRESHOLD){
+            distance_3 = read_distance_sonar_3();
+            steer(1);   // steer right
+        }
+    }
+
+    // Rightmost sonar sensor
+    if(distance_4 <= OBSTACLE_DISTANCE_THRESHOLD){
+        IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_4 Obstacle Detected: \n\r");
+        while(distance_4 <= OBSTACLE_DISTANCE_THRESHOLD){
+            distance_4 = read_distance_sonar_4();
+            steer(-1);      // steer left
+        }
+    }
+
+    steer(0);       // forward
 
 }
 

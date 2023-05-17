@@ -11,7 +11,7 @@
 /*-----------------------------------------------------Includes------------------------------------------------------*/
 #include "Platform_Types.h"
 
-void vehicle_control(void);
+void vehicle_control_obstacle_avoidance_mode(void);
 int pid_control(void);
 
 

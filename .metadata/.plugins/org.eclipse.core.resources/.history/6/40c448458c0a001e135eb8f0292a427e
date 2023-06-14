@@ -99,7 +99,7 @@ void vehicle_control(void){
             ReverseFlag = 1;
             IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Reverse \n\r");
         }
-        steer(10);         // stop
+        steer(2);         // stop
         waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 300));
         distanceLeft = lookLeft();
         waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 300));

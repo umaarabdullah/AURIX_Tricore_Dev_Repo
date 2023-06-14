@@ -99,12 +99,10 @@ void vehicle_control(void){
             ReverseFlag = 1;
             IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Reverse \n\r");
         }
-        steer(10);         // stop
-        waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 300));
-        distanceLeft = lookLeft();
+        steer(2);         // stop
         waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 300));
         distanceRight = lookRight();
-        waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 300));
+//        waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 300));
 
         if (distanceLeft <= OBSTACLE_DISTANCE_THRESHOLD){
             steer(1);       // turnRight

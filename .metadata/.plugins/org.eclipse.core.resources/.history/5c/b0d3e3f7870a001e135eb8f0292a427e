@@ -20,24 +20,15 @@
 double previous_error = 0;
 double integral = 0;
 
-/*********************************************************************************************************************/
-/*------------------------------------------------------Macros-------------------------------------------------------*/
-/*********************************************************************************************************************/
+// Ultrasonic Sensor Constants
 #define OBSTACLE_DISTANCE_THRESHOLD 30.0   // Threshold distance for obstacle detection in centimeters
+
 #define WAIT_TIME   1000
 
-/*********************************************************************************************************************/
-/*------------------------------------------------Function Prototypes------------------------------------------------*/
-/*********************************************************************************************************************/
 void steer(int direction);
 double calculate_error(void);
 int lookRight(void);
 int lookLeft(void);
-
-/*********************************************************************************************************************/
-/*-------------------------------------------------Global variables--------------------------------------------------*/
-/*********************************************************************************************************************/
-int ReverseFlag = 0;
 
 /*
  * Steering Functions
@@ -81,10 +72,11 @@ void vehicle_control(void){
     double distance_3 = read_distance_sonar_3();
     double distance_4 = read_distance_sonar_4();
 
-    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_1 Distance: %lfcm\n\r",distance_1);
-    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_2 Distance: %lfcm\n\r",distance_2);
-    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_3 Distance: %lfcm\n\r",distance_3);
-    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_4 Distance: %lfcm\n\r",distance_4);
+    int ReverseFlag = 0;
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_1 Distance: %lfCM\n\r",distance_1);
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_2 Distance: %lfCM\n\r",distance_2);
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_3 Distance: %lfCM\n\r",distance_3);
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_4 Distance: %lfCM\n\r",distance_4);
 
     if (distance_1 <= OBSTACLE_DISTANCE_THRESHOLD ||
       distance_2 <= OBSTACLE_DISTANCE_THRESHOLD ||
@@ -95,17 +87,15 @@ void vehicle_control(void){
         waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 300));
         if(!ReverseFlag){
             steer(2);         // reverse
-            waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 100));
+            waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 200));
             ReverseFlag = 1;
-            IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Reverse \n\r");
         }
-        steer(10);         // stop
-        waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 300));
-        distanceLeft = lookLeft();
+        steer(2);         // stop
         waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 300));
         distanceRight = lookRight();
-        waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 300));
-
+//        waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 300));
+        distanceLeft = lookLeft();
+//        waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 300));
         if (distanceLeft <= OBSTACLE_DISTANCE_THRESHOLD){
             steer(1);       // turnRight
             steer(10);

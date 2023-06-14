@@ -1,0 +1,137 @@
+/*
+ * Ultrasonic_Based_Pid_Control.c
+ *
+ *  Created on: May 13, 2023
+ *      Author: Umaar
+ */
+
+#include "Navigation.h"
+#include "SONAR.h"
+#include "STM_Interrupt.h"
+#include "Bsp.h"
+#include "UART.h"
+
+// PID Controller Constants
+#define Kp 0.5   // Proportional gain
+#define Ki 0.2   // Integral gain
+#define Kd 0.1   // Derivative gain
+
+// PID Controller Variables
+double previous_error = 0;
+double integral = 0;
+
+// Ultrasonic Sensor Constants
+#define OBSTACLE_DISTANCE_THRESHOLD 30.0   // Threshold distance for obstacle detection in centimeters
+
+#define WAIT_TIME   1000
+
+
+void steer(int direction);
+double calculate_error(void);
+
+/*
+ * Steering Functions
+ * Function to actuate the steering mechanism
+ * based on the desired direction (-1 for left, 0 for straight, 1 for right)
+*/
+void steer(int direction) {
+
+    switch (direction){
+        case -1:
+            hard_left();
+            break;
+        case 0:
+            forward();
+            break;
+        case 1:
+            hard_right();
+            break;
+        case 2:
+            backward();
+            break;
+        case 10:
+            stop();
+            break;
+    }
+}
+
+/*
+ * Calculates the error based on the desired path and current position
+ * Return the calculated error value
+*/
+double calculate_error() {
+
+//    // Get sensor readings or other relevant data
+//    double current_position = getCurrentPosition();  // Get the current lateral position of the car
+//
+//    // Calculate the error as the lateral deviation from the desired straight path
+//    double error = current_position;
+
+    return 0.0;
+}
+
+void vehicle_control(void){
+
+    // Read the distance from the sonar sensor
+    int distanceRight = 0;
+    int distanceLeft = 0;
+
+    double distance_1 = read_distance_sonar_1();
+    double distance_2 = read_distance_sonar_2();
+    double distance_3 = read_distance_sonar_3();
+    double distance_4 = read_distance_sonar_4();
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_1 Distance: %lfCM\n\r",distance_1);
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_2 Distance: %lfCM\n\r",distance_2);
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_3 Distance: %lfCM\n\r",distance_3);
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_4 Distance: %lfCM\n\r",distance_4);
+
+    if (distance_1 <= OBSTACLE_DISTANCE_THRESHOLD ||
+      distance_2 <= OBSTACLE_DISTANCE_THRESHOLD ||
+      distance_3 <= OBSTACLE_DISTANCE_THRESHOLD ||
+      distance_4 <= OBSTACLE_DISTANCE_THRESHOLD)
+    {
+        steer(10);        // stop
+        waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 300));
+        steer(2);         // reverse
+        waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 400));
+        steer(2);         // stop
+        waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 300));
+        distanceRight = lookRight();
+        waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 300));
+        distanceLeft = lookLeft();
+        waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 300));
+        if (distance >= distanceLeft){
+            steer(1);       // turnRight
+            steer(10);
+        }
+        else{
+            steer(-1);      // turnLeft
+            steer(10);
+        }
+    }
+    else{
+        steer(0);           // forward
+    }
+}
+
+int lookRight(){
+    steer(1);         // right
+    waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 500));
+    steer(-1);        // left
+    waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 500));
+
+    int distance = readPing();
+    waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 100));
+    return distance;
+}
+
+
+int lookLeft(){
+    servo_motor.write(170);
+    delay(500);
+    int distance = readPing();
+    delay(100);
+    servo_motor.write(115);
+    return distance;
+    delay(100);
+}

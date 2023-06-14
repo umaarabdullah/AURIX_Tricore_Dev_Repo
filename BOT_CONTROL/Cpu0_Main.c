@@ -27,7 +27,7 @@
 /*********************************************************************************************************************/
 /*------------------------------------------------------Global Variables-------------------------------------------------------*/
 /*********************************************************************************************************************/
-int duty = 100;                          /* The PWM signal duty cycle represents the percentage of time the signal remains in the logic high state. */
+int duty = 95;                          /* The PWM signal duty cycle represents the percentage of time the signal remains in the logic high state. */
 
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
@@ -65,7 +65,7 @@ void core0_main(void)
     while(1)
     {
 
-        vehicle_control_obstacle_avoidance_mode();
+        vehicle_control();
 
 //        forward();
 //        waitTime(ticks);

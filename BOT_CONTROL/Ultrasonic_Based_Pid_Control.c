@@ -81,10 +81,10 @@ void vehicle_control(void){
     double distance_3 = read_distance_sonar_3();
     double distance_4 = read_distance_sonar_4();
 
-    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_1 Distance: %lfcm\n\r",distance_1);
-    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_2 Distance: %lfcm\n\r",distance_2);
-    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_3 Distance: %lfcm\n\r",distance_3);
-    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_4 Distance: %lfcm\n\r",distance_4);
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_1 Distance: %lfcm\n\r",distance_1);
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_2 Distance: %lfcm\n\r",distance_2);
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_3 Distance: %lfcm\n\r",distance_3);
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Sonar_4 Distance: %lfcm\n\r",distance_4);
 
     if (distance_1 <= OBSTACLE_DISTANCE_THRESHOLD ||
       distance_2 <= OBSTACLE_DISTANCE_THRESHOLD ||
@@ -97,7 +97,7 @@ void vehicle_control(void){
             steer(2);         // reverse
             waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 100));
             ReverseFlag = 1;
-            IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Reverse \n\r");
+//            IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r Reverse \n\r");
         }
         steer(10);         // stop
         waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 300));

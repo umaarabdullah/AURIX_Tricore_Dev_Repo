@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="stray"/>
+		<item key="selection" value="IfxAsclin0_RXB_P15_"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="IfxAsclin0_RXB_P15_"/>
+			<item value="IfxAsclin0_RXB_P15"/>
+			<item value="IfxAsclin0_RXB_P15_2"/>
+			<item value="RXB"/>
+			<item value="IfxAsclin1_RXA_P20_0_IN"/>
+			<item value="IfxAsclin1_RXA_P20_3_IN"/>
+			<item value="IfxAsclin1_RXA_P15_4_IN"/>
+			<item value="P15_4"/>
+			<item value="P15_4_IN"/>
+			<item value="g_ascRxBuffer"/>
+			<item value="IfxAsclin1_RXB_P15_5_OUT"/>
+			<item value="steer(2)"/>
 			<item value="stray"/>
 			<item value="IfxStdIf_DPipe_print"/>
 			<item value="IfxStm_get"/>
-			<item value="IfxStm_Comparator_0"/>
-			<item value="IfxStm_getCompare"/>
-			<item value="compare"/>
-			<item value="uscount"/>
-			<item value="ping"/>
-			<item value="IfxStm_getMicrosecond"/>
-			<item value="g_ticksForDelayms"/>
-			<item value="g_ticksFor500ms"/>
-			<item value="initLED"/>
-			<item value="IfxStm_enableModule"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
@@ -31,8 +33,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1274"/>
-		<item key="DIALOG_Y_ORIGIN" value="213"/>
+		<item key="DIALOG_X_ORIGIN" value="1283"/>
+		<item key="DIALOG_Y_ORIGIN" value="574"/>
 		<item key="DIALOG_WIDTH" value="511"/>
 		<item key="DIALOG_HEIGHT" value="523"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

@@ -32,11 +32,11 @@ void initNavigation(void)
 void forward (void)
 {
     // left side forward
-    IfxPort_setPinLow(IN_3);
-    IfxPort_setPinHigh(IN_4);
+    IfxPort_setPinLow(IN_3);        // 0
+    IfxPort_setPinHigh(IN_4);       // 1
     // right side forward
-    IfxPort_setPinLow(IN_1);
-    IfxPort_setPinHigh(IN_2);
+    IfxPort_setPinLow(IN_1);        // 0
+    IfxPort_setPinHigh(IN_2);       // 1
 
 }
 
@@ -69,7 +69,7 @@ void hard_right (void)
     IfxPort_setPinLow(IN_2);
 }
 
-void stop(void){
+void stop(void){            // 0 0 0 0
     IfxPort_setPinLow(IN_1);
     IfxPort_setPinLow(IN_2);
     IfxPort_setPinLow(IN_3);

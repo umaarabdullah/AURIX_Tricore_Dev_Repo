@@ -1,4 +1,4 @@
-02:43:00 **** Incremental Build of configuration Debug for project GTM_TOM_PWM_1_KIT_TC375_SB ****
+10:26:39 **** Build of configuration Debug for project GTM_TOM_PWM_1_KIT_TC375_SB ****
 make --output-sync -j12 all 
 Invoking: Print Size
 TASKING VX-toolset for AURIX Development Studio (non-commercial): ELF size v1.1r8 Build 22011964
@@ -9,5 +9,5 @@ RAM: 0x84c8 (33992) = data + bss
 Finished building: GTM_TOM_PWM_1_KIT_TC375_SB.siz
  
 
-02:43:01 Build Finished. 0 errors, 0 warnings. (took 911ms)
+10:26:41 Build Finished. 0 errors, 0 warnings. (took 1s.618ms)
 

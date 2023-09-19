@@ -10,7 +10,7 @@ C_SRCS += \
 ../Cpu2_Main.c \
 ../GTM_PWM.c \
 ../RPLIDAR_A2.c \
-../UART.c 
+../UART_SHELL.c 
 
 COMPILED_SRCS += \
 ./ASCLIN_UART.src \
@@ -19,7 +19,7 @@ COMPILED_SRCS += \
 ./Cpu2_Main.src \
 ./GTM_PWM.src \
 ./RPLIDAR_A2.src \
-./UART.src 
+./UART_SHELL.src 
 
 C_DEPS += \
 ./ASCLIN_UART.d \
@@ -28,7 +28,7 @@ C_DEPS += \
 ./Cpu2_Main.d \
 ./GTM_PWM.d \
 ./RPLIDAR_A2.d \
-./UART.d 
+./UART_SHELL.d 
 
 OBJS += \
 ./ASCLIN_UART.o \
@@ -37,7 +37,7 @@ OBJS += \
 ./Cpu2_Main.o \
 ./GTM_PWM.o \
 ./RPLIDAR_A2.o \
-./UART.o 
+./UART_SHELL.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -60,7 +60,7 @@ OBJS += \
 clean: clean--2e-
 
 clean--2e-:
-	-$(RM) ./ASCLIN_UART.d ./ASCLIN_UART.o ./ASCLIN_UART.src ./Cpu0_Main.d ./Cpu0_Main.o ./Cpu0_Main.src ./Cpu1_Main.d ./Cpu1_Main.o ./Cpu1_Main.src ./Cpu2_Main.d ./Cpu2_Main.o ./Cpu2_Main.src ./GTM_PWM.d ./GTM_PWM.o ./GTM_PWM.src ./RPLIDAR_A2.d ./RPLIDAR_A2.o ./RPLIDAR_A2.src ./UART.d ./UART.o ./UART.src
+	-$(RM) ./ASCLIN_UART.d ./ASCLIN_UART.o ./ASCLIN_UART.src ./Cpu0_Main.d ./Cpu0_Main.o ./Cpu0_Main.src ./Cpu1_Main.d ./Cpu1_Main.o ./Cpu1_Main.src ./Cpu2_Main.d ./Cpu2_Main.o ./Cpu2_Main.src ./GTM_PWM.d ./GTM_PWM.o ./GTM_PWM.src ./RPLIDAR_A2.d ./RPLIDAR_A2.o ./RPLIDAR_A2.src ./UART_SHELL.d ./UART_SHELL.o ./UART_SHELL.src
 
 .PHONY: clean--2e-
 

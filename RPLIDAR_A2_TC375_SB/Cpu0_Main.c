@@ -24,6 +24,7 @@
  * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
  * IN THE SOFTWARE.
  *********************************************************************************************************************/
+#include <UART_SHELL.h>
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
@@ -31,7 +32,6 @@
 #include "GTM_PWM.h"
 #include "Bsp.h"
 #include "stdbool.h"
-#include "UART.h"
 
 #define WAIT_TIME   2000
 

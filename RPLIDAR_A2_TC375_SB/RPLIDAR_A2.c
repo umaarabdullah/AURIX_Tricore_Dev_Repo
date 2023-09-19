@@ -5,7 +5,7 @@
  *      Author: Umaar
  */
 
-#include "ASCLIN_UART.h"    // Include your UART driver header
+#include "ASCLIN_UART.h"
 #include "RPLIDAR_A2.h"
 #include "stdint.h"
 #include "Ifx_Types.h"

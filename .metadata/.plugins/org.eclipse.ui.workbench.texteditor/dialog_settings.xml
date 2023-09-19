@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="IfxAsclin0_RXB_P15_"/>
+		<item key="selection" value="asc1"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="asc3"/>
+			<item value="ENDLINE"/>
+			<item value="g_uartRxBuffer"/>
+			<item value="g_uartTxBuffer"/>
+			<item value="g_uartTxBuffer_shell"/>
+			<item value="initSerialInterface"/>
+			<item value="g_asclin"/>
 			<item value="IfxAsclin0_RXB_P15_"/>
 			<item value="IfxAsclin0_RXB_P15"/>
 			<item value="IfxAsclin0_RXB_P15_2"/>
@@ -16,16 +23,15 @@
 			<item value="IfxAsclin1_RXA_P20_3_IN"/>
 			<item value="IfxAsclin1_RXA_P15_4_IN"/>
 			<item value="P15_4"/>
-			<item value="P15_4_IN"/>
-			<item value="g_ascRxBuffer"/>
-			<item value="IfxAsclin1_RXB_P15_5_OUT"/>
-			<item value="steer(2)"/>
-			<item value="stray"/>
-			<item value="IfxStdIf_DPipe_print"/>
-			<item value="IfxStm_get"/>
 		</list>
 		<list key="replacehistory">
+			<item value="asc1"/>
 			<item value=""/>
+			<item value="g_uartRxBuffer_shell"/>
+			<item value="g_uartTxBuffer_shell"/>
+			<item value="g_uartTxBuffer"/>
+			<item value="initSerialInterfaceForShell"/>
+			<item value="g_asclin_shell"/>
 			<item value="__uscount"/>
 			<item value="elapsed_time"/>
 			<item value="g_ticksForDelayus"/>

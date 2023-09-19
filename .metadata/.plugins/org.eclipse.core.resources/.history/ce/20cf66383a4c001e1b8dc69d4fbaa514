@@ -1,0 +1,43 @@
+/*
+ * RPLIDAR_A2.c
+ *
+ *  Created on: Sep 6, 2023
+ *      Author: Umaar
+ */
+
+#include "ASCLIN_UART.h"    // Include your UART driver header
+#include "RPLIDAR_A2.h"
+#include "stdbool.h"
+#include "stdint.h"
+#include "Ifx_Types.h"
+#include "IfxPort.h"
+
+/* Define the RPLIDAR A2 response packet size */
+#define RPLIDAR_RESPONSE_SIZE 7
+
+/* Function to send a request to the RPLIDAR A2 and check its health */
+bool checkRPLIDARHealth(void)
+{
+    uint8_t requestPacket[] = {0xA5, 0x52};  // Request packet
+
+    /* Send the request packet to the RPLIDAR A2 */
+    Ifx_SizeT requestSize = sizeof(requestPacket);
+    Ifx_SizeT responseSize = RPLIDAR_RESPONSE_SIZE;
+
+    IfxAsclin_Asc_write(&g_asclin, requestPacket, &requestSize, TIME_INFINITE);
+
+    /* Receive the response from the RPLIDAR A2 */
+    IfxAsclin_Asc_read(&g_asclin, g_rxData, &responseSize, 10000);
+
+    /* Check if the received response matches the expected size and content */
+    if (responseSize == RPLIDAR_RESPONSE_SIZE &&
+        g_rxData[0] == 0xA5 &&
+        g_rxData[1] == 0x5A &&
+        g_rxData[2] == 0x05) {
+        /* The lidar health check was successful */
+        return true;
+    } else {
+        /* Lidar health check failed */
+        return false;
+    }
+}

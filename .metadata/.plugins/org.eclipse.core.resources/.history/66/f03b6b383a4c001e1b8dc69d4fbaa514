@@ -1,0 +1,16 @@
+/*
+ * RPLIDAR_A2.h
+ *
+ *  Created on: Sep 6, 2023
+ *      Author: Umaar
+ */
+
+#ifndef RPLIDAR_A2_H_
+#define RPLIDAR_A2_H_
+
+
+/* Function to send a request to the RPLIDAR A2 and check its health */
+bool checkRPLIDARHealth(void);
+
+
+#endif /* RPLIDAR_A2_H_ */

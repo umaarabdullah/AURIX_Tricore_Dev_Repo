@@ -30,6 +30,8 @@
 #include "ASCLIN_UART.h"
 #include "GTM_PWM.h"
 #include "Bsp.h"
+#include "stdbool.h"
+#include "UART.h"
 
 #define WAIT_TIME   2000
 
@@ -55,15 +57,26 @@ void core0_main(void)
     initSerialInterface();              /* Initialize the UART hardware peripheral */
     IfxCpu_enableInterrupts();          /* Enable interrupts after initialization */
     
+    initShellInterface();               /* Initialize the Shell Interface and the UART communication */
+
     // Get ticks for waitTime
     Ifx_TickTime ticks = IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, WAIT_TIME);
 
-//    waitTime(ticks);
-    send_receive_ASCLIN_UART_message();
+
+
+//    send_receive_ASCLIN_UART_message();     // send check health request packet
 
     while(1)
     {
-
+       waitTime(ticks);
+        /* Check the health status of the RPLIDAR A2 */
+       if (checkRPLIDARHealth()) {
+           /* RPLIDAR A2 is healthy */
+           IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\rrplidar is healthy\n\r");
+       } else {
+           /* RPLIDAR A2 is not healthy or the response was not as expected */
+           IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\rhealth not Okay !!\n\r");
+       }
     }
 }
 

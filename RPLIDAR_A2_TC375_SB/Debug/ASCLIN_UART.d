@@ -2,6 +2,8 @@
 ../ASCLIN_UART.c :
 /ASCLIN_UART.o :	../ASCLIN_UART.h
 ../ASCLIN_UART.h :
+/ASCLIN_UART.o :	e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdbool.h
+e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdbool.h :
 /ASCLIN_UART.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/iLLD/TC37A/Tricore/Cpu/Std/Ifx_Types.h
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/iLLD/TC37A/Tricore/Cpu/Std/Ifx_Types.h :
 /ASCLIN_UART.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Infra/Platform/Tricore/Compilers/Compilers.h
@@ -104,3 +106,7 @@ c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libra
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Service/CpuGeneric/StdIf/IfxStdIf.h :
 /ASCLIN_UART.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/iLLD/TC37A/Tricore/Port/Std/IfxPort.h
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/iLLD/TC37A/Tricore/Port/Std/IfxPort.h :
+/ASCLIN_UART.o :	e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdint.h
+e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdint.h :
+/ASCLIN_UART.o :	e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/typeinfo.h
+e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/typeinfo.h :

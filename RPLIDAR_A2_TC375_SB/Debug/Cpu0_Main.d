@@ -74,6 +74,8 @@ c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libra
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/iLLD/TC37A/Tricore/Scu/Std/IfxScuWdt.h :
 /Cpu0_Main.o :	../ASCLIN_UART.h
 ../ASCLIN_UART.h :
+/Cpu0_Main.o :	e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdbool.h
+e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdbool.h :
 /Cpu0_Main.o :	../GTM_PWM.h
 ../GTM_PWM.h :
 /Cpu0_Main.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Service/CpuGeneric/SysSe/Bsp/Bsp.h
@@ -90,3 +92,9 @@ c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libra
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Infra/Sfr/TC37A/_Reg/IfxCbs_reg.h :
 /Cpu0_Main.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Infra/Sfr/TC37A/_Reg/IfxCbs_regdef.h
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Infra/Sfr/TC37A/_Reg/IfxCbs_regdef.h :
+/Cpu0_Main.o :	../UART.h
+../UART.h :
+/Cpu0_Main.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.h
+c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.h :
+/Cpu0_Main.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Service/CpuGeneric/StdIf/IfxStdIf.h
+c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Service/CpuGeneric/StdIf/IfxStdIf.h :

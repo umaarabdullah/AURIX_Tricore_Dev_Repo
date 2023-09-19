@@ -1,0 +1,17 @@
+/*
+ * j.cpp
+ *
+ *  Created on: Sep 7, 2023
+ *      Author: Umaar
+ */
+
+#include <iostream>
+
+int add(int a, int b) {
+    int sum = a + b;
+    return sum;
+}
+
+
+
+

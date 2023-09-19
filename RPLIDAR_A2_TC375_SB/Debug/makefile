@@ -24,6 +24,7 @@ RM := rm -rf
 -include Libraries/iLLD/TC37A/Tricore/Cpu/Irq/subdir.mk
 -include Libraries/iLLD/TC37A/Tricore/Asclin/Std/subdir.mk
 -include Libraries/iLLD/TC37A/Tricore/Asclin/Asc/subdir.mk
+-include Libraries/Service/CpuGeneric/SysSe/Comm/subdir.mk
 -include Libraries/Service/CpuGeneric/SysSe/Bsp/subdir.mk
 -include Libraries/Service/CpuGeneric/StdIf/subdir.mk
 -include Libraries/Infra/Ssw/TC37A/Tricore/subdir.mk

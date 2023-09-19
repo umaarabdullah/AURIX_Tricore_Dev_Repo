@@ -9,6 +9,7 @@
 #include "Ifx_Types.h"
 #include "IfxAsclin_Asc.h"
 #include "IfxPort.h"
+#include "stdint.h"
 
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
@@ -128,10 +129,41 @@ void initSerialInterface(void)
 void send_receive_ASCLIN_UART_message(void)
 {
     IfxAsclin_Asc_write(&g_asclin, g_txData, &g_count, TIME_INFINITE);   /* Transmit data via TX */
-    g_count = sizeof(g_rxData);
-    IfxAsclin_Asc_read(&g_asclin, g_rxData, &g_count, TIME_INFINITE);    /* Receive data via RX  */
-    g_count = sizeof(g_rxData);
-    IfxAsclin_Asc_write(&g_asclin, g_rxData, &g_count, TIME_INFINITE);   /* Transmit data via TX */
+    g_count = 7;    // receive 7 bytes of a response descriptor packet
+    IfxAsclin_Asc_read(&g_asclin, g_rxData, &g_count, 10000);    /* Receive data via RX  */
+    // print the received the packet
+}
+
+
+/* Define the RPLIDAR A2 response packet size */
+#define RPLIDAR_RESPONSE_SIZE 7
+
+/* Function to send a request to the RPLIDAR A2 and check its health */
+bool checkRPLIDARHealth(void)
+{
+    uint8_t requestPacket[] = {0xA5, 0x52};  // Request packet
+
+    /* Send the request packet to the RPLIDAR A2 */
+    Ifx_SizeT requestSize = sizeof(requestPacket);
+    Ifx_SizeT responseSize = RPLIDAR_RESPONSE_SIZE;
+
+    // write to serial tx
+    IfxAsclin_Asc_write(&g_asclin, requestPacket, &requestSize, TIME_INFINITE);
+
+    /* Receive the response from the RPLIDAR A2 */
+    IfxAsclin_Asc_read(&g_asclin, g_rxData, &responseSize, 10000);
+
+    /* Check if the received response matches the expected size and content */
+    if (responseSize == RPLIDAR_RESPONSE_SIZE &&
+        g_rxData[0] == 0xA5 &&
+        g_rxData[1] == 0x5A &&
+        g_rxData[2] == 0x05) {
+        /* The lidar health check was successful */
+        return true;
+    } else {
+        /* Lidar health check failed */
+        return false;
+    }
 }
 
 

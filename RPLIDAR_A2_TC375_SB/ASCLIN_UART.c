@@ -10,6 +10,7 @@
 #include "IfxAsclin_Asc.h"
 #include "IfxPort.h"
 #include "stdint.h"
+#include "UART_SHELL.h"
 
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
@@ -20,12 +21,12 @@
 #define ISR_PRIORITY_ASCLIN_ER      12                                      /* Priority for interrupt ISR Errors    */
 #define ASC_TX_BUFFER_SIZE          256                                     /* Define the TX buffer size in byte    */
 #define ASC_RX_BUFFER_SIZE          256                                     /* Define the RX buffer size in byte    */
-#define ASC_BAUDRATE                115200                                  /* Define the UART baud rate            */
+#define ASC_BAUDRATE                256000                                  /* Define the UART baud rate            */
 
 /* TX RX Pin Assignment */
 #define UART_PIN_RX             &IfxAsclin0_RXB_P15_3_IN                 /* UART receive port pin                    */
 #define UART_PIN_TX             &IfxAsclin0_TX_P15_2_OUT                 /* UART transmit port pin                   */
-#define SIZE                    5                                       /* Size of the string                       */
+#define SIZE                    1024                                       /* Size of the string                       */
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Global variables--------------------------------------------------*/
@@ -136,12 +137,12 @@ void send_receive_ASCLIN_UART_message(void)
 
 
 /* Define the RPLIDAR A2 response packet size */
-#define RPLIDAR_RESPONSE_SIZE 7
+#define RPLIDAR_RESPONSE_SIZE 12
 
 /* Function to send a request to the RPLIDAR A2 and check its health */
 bool checkRPLIDARHealth(void)
 {
-    uint8_t requestPacket[] = {0xA5, 0x52};  // Request packet
+    uint8_t requestPacket[] = {0xA5, 0x20};  // Request packet
 
     /* Send the request packet to the RPLIDAR A2 */
     Ifx_SizeT requestSize = sizeof(requestPacket);
@@ -153,17 +154,14 @@ bool checkRPLIDARHealth(void)
     /* Receive the response from the RPLIDAR A2 */
     IfxAsclin_Asc_read(&g_asclin, g_rxData, &responseSize, 10000);
 
-    /* Check if the received response matches the expected size and content */
-    if (responseSize == RPLIDAR_RESPONSE_SIZE &&
-        g_rxData[0] == 0xA5 &&
-        g_rxData[1] == 0x5A &&
-        g_rxData[2] == 0x05) {
-        /* The lidar health check was successful */
-        return true;
-    } else {
-        /* Lidar health check failed */
-        return false;
+    // Print all received bytes
+    for (int i = 0; i < responseSize; i++) {
+//        IfxStdIf_DPipe_print(&g_ascStandardInterface, "Byte %d: 0x%x", i, g_rxData[i]);
+        IfxStdIf_DPipe_print(&g_ascStandardInterface, "0x%x ", g_rxData[i]);
     }
+    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r");
+
+    return true; // Modify as needed
 }
 
 

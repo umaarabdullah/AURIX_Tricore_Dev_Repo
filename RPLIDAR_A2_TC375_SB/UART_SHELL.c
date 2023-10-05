@@ -15,6 +15,8 @@
 #include "Ifx_Console.h"
 #include "IfxPort.h"
 #include "IfxPort_regdef.h"
+#include <stdarg.h>
+#include <stdio.h>
 
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
@@ -34,7 +36,6 @@
 void initSerialInterfaceForShell(void);
 void printInfo(IfxStdIf_DPipe *io);
 boolean printShellInfo(pchar args, void *data, IfxStdIf_DPipe *io);
-boolean toggleLEDShell(pchar args, void *data, IfxStdIf_DPipe *io, Ifx_P *port, uint8 pinIndex);
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Global variables--------------------------------------------------*/
@@ -104,27 +105,6 @@ boolean printShellInfo(pchar args, void *data, IfxStdIf_DPipe *io)
     return TRUE;
 }
 
-/* Function to toggle a LED */
-boolean toggleLEDShell(pchar args, void *data, IfxStdIf_DPipe *io, Ifx_P *port, uint8 pinIndex)
-{
-    // Dynamically define a macro LED
-    #undef LED                          // undefine the macro to remove any previous definitions
-    #define LED port,pinIndex           // redefine the macro with the new value
-
-    if(args[0] == '1')
-    {
-        IfxPort_setPinState(LED, IfxPort_State_toggled);
-        IfxStdIf_DPipe_print(io, "Toggled LED!" ENDLINE ENDLINE);
-    }
-    else
-    {
-        IfxPort_setPinState(LED, IfxPort_State_low);
-        IfxStdIf_DPipe_print(io, "Command syntax not correct.");
-        return FALSE; /* Returning false triggers a Shell command error */
-    }
-    return TRUE;
-}
-
 /* Function to initialize ASCLIN module */
 void initSerialInterfaceForShell(void)
 {
@@ -183,8 +163,6 @@ void initShellInterface(void)
     /* Initialize the Console */
     Ifx_Console_init(&g_ascStandardInterface);
 
-//    Ifx_Console_print(ENDLINE "Enter '" "' to see the available commands" ENDLINE);
-
     /* Initialize the shell */
     Ifx_Shell_Config shellConf;
     Ifx_Shell_initConfig(&shellConf);                       /* Initialize the structure with default values         */
@@ -195,12 +173,30 @@ void initShellInterface(void)
 }
 
 /* Function to process the incoming received data */
-/* UART RECEPTION */
 void runShellInterface(void)
 {
     /* Process the received data */
     Ifx_Shell_process(&g_shellInterface);
 }
+
+void println(const char *format, ...)
+{
+    // Initialize the variable argument list
+    va_list args;
+    va_start(args, format);
+
+    // Format the message using vsnprintf
+    char buffer[1024];  // Adjust the buffer size as needed
+    vsnprintf(buffer, sizeof(buffer), format, args);
+
+    // Print the formatted message
+    IfxStdIf_DPipe_print(&g_ascStandardInterface, "%s\n\r", buffer);
+
+    // Clean up the variable argument list
+    va_end(args);
+}
+
+
 
 
 

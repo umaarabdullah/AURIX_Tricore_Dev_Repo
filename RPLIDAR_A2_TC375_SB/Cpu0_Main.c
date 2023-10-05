@@ -33,7 +33,7 @@
 #include "Bsp.h"
 #include "stdbool.h"
 
-#define WAIT_TIME   2000
+#define WAIT_TIME   5000
 
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
@@ -63,20 +63,15 @@ void core0_main(void)
     Ifx_TickTime ticks = IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, WAIT_TIME);
 
 
-
 //    send_receive_ASCLIN_UART_message();     // send check health request packet
 
     while(1)
     {
-       waitTime(ticks);
+        int a = 65;
+        println("Hello %d %x %c",a,a,a);
+        waitTime(ticks);
         /* Check the health status of the RPLIDAR A2 */
-       if (checkRPLIDARHealth()) {
-           /* RPLIDAR A2 is healthy */
-           IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\rrplidar is healthy\n\r");
-       } else {
-           /* RPLIDAR A2 is not healthy or the response was not as expected */
-           IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\rhealth not Okay !!\n\r");
-       }
+//       checkRPLIDARHealth();
     }
 }
 

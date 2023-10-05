@@ -110,3 +110,7 @@ c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libra
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Service/CpuGeneric/SysSe/Comm/Ifx_Console.h :
 /UART_SHELL.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/iLLD/TC37A/Tricore/Port/Std/IfxPort.h
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/iLLD/TC37A/Tricore/Port/Std/IfxPort.h :
+/UART_SHELL.o :	e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdarg.h
+e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdarg.h :
+/UART_SHELL.o :	e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdio.h
+e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdio.h :

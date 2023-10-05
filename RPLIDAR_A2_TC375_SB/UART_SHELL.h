@@ -31,6 +31,7 @@ extern IfxStdIf_DPipe  g_ascStandardInterface;                                  
 /*********************************************************************************************************************/
 void initShellInterface(void);
 void runShellInterface(void);
+void println(const char *, ...);
 
 
 #endif /* UART_SHELL_H_ */

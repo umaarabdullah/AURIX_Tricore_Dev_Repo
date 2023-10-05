@@ -110,3 +110,7 @@ c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libra
 e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdint.h :
 /ASCLIN_UART.o :	e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/typeinfo.h
 e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/typeinfo.h :
+/ASCLIN_UART.o :	../UART_SHELL.h
+../UART_SHELL.h :
+/ASCLIN_UART.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.h
+c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.h :

@@ -1,9 +1,13 @@
-Aurix Flasher 2.5.3.0, built on 3/17/2022 7:12:47 PM
-Connected to device... [TRICORE] DAS JTAG SHIELDBUDDY TC375
-::Loading HEX file .......... 
- ::Warning: The given program file is trying to write on reserved memory addresses, which will be skipped.
-::Erasing Flash memory .......... (Pass)
-::Programming Flash memory .......... (Pass)
-Overall time: 1482 ms
-AurixFlasher Exit Status: Pass
-Flashing was successfull
+21:19:03 **** Incremental Build of configuration Debug for project RPLIDAR_A2_TC375_SB ****
+make --output-sync -j12 all 
+Invoking: Print Size
+TASKING VX-toolset for AURIX Development Studio (non-commercial): ELF size v1.1r8 Build 22011964
+elfsize  "RPLIDAR_A2_TC375_SB.elf"
+Total sizes:
+ROM: 0x6e65 (28261) = code: 0x58d8 (22744) + romdata: 0x158d (5517)
+RAM: 0xa10d (41229) = data + bss
+Finished building: RPLIDAR_A2_TC375_SB.siz
+ 
+
+21:19:05 Build Finished. 0 errors, 0 warnings. (took 1s.766ms)
+

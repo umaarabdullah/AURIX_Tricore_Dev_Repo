@@ -1,0 +1,18 @@
+/*
+ * RPLidar_A2M12.h
+ *
+ *  Created on: Nov 2, 2023
+ *      Author: Umaar
+ */
+
+#ifndef RPLIDAR_A2M12_H_
+#define RPLIDAR_A2M12_H_
+
+#include "RPLidar_Includes/rplidar_cmd.h"
+#include "RPLidar_Includes/rptypes.h"
+
+
+
+
+
+#endif /* RPLIDAR_A2M12_H_ */

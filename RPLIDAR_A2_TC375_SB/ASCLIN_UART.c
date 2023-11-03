@@ -26,7 +26,7 @@
 /* TX RX Pin Assignment */
 #define UART_PIN_RX             &IfxAsclin0_RXB_P15_3_IN                 /* UART receive port pin                    */
 #define UART_PIN_TX             &IfxAsclin0_TX_P15_2_OUT                 /* UART transmit port pin                   */
-#define SIZE                    1024                                       /* Size of the string                       */
+#define SIZE                    1024                                     /* Size of the string                       */
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Global variables--------------------------------------------------*/
@@ -41,7 +41,7 @@ uint8 g_uartTxBuffer[ASC_TX_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
 uint8 g_uartRxBuffer[ASC_RX_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
 
 /* Definition of txData and rxData */
-uint8 g_txData[] = {0xA5,0x52}; // get health command
+uint8 g_txData[] = {0xA5,0x52}; // rplidar get health command
 uint8 g_rxData[SIZE] = {''};
 
 /* Size of the message */
@@ -81,7 +81,7 @@ void asc0ErrISR(void)
 }
 
 /* Function to initialize ASCLIN module */
-void initSerialInterface(void)
+void initSerialInterface()
 {
     IfxAsclin_Asc_Config ascConf;
 
@@ -126,7 +126,12 @@ void initSerialInterface(void)
     IfxAsclin_Asc_initModule(&g_asclin, &ascConf);          /* Initialize the module with the given configuration   */
 }
 
-/* This function sends and receives the string "Hello World!" */
+/**
+ * Function to test the UART communication by sending a message and waiting for a response.
+ *
+ * This function sends a test message over UART and verifies if the communication is working
+ * by expecting a response. It is used to check the integrity of the UART communication link.
+ */
 void send_receive_ASCLIN_UART_message(void)
 {
     IfxAsclin_Asc_write(&g_asclin, g_txData, &g_count, TIME_INFINITE);   /* Transmit data via TX */
@@ -135,33 +140,33 @@ void send_receive_ASCLIN_UART_message(void)
     // print the received the packet
 }
 
-
-/* Define the RPLIDAR A2 response packet size */
-#define RPLIDAR_RESPONSE_SIZE 12
-
-/* Function to send a request to the RPLIDAR A2 and check its health */
-bool checkRPLIDARHealth(void)
-{
-    uint8_t requestPacket[] = {0xA5, 0x20};  // Request packet
-
-    /* Send the request packet to the RPLIDAR A2 */
-    Ifx_SizeT requestSize = sizeof(requestPacket);
-    Ifx_SizeT responseSize = RPLIDAR_RESPONSE_SIZE;
-
-    // write to serial tx
-    IfxAsclin_Asc_write(&g_asclin, requestPacket, &requestSize, TIME_INFINITE);
-
-    /* Receive the response from the RPLIDAR A2 */
-    IfxAsclin_Asc_read(&g_asclin, g_rxData, &responseSize, 10000);
-
-    // Print all received bytes
-    for (int i = 0; i < responseSize; i++) {
-//        IfxStdIf_DPipe_print(&g_ascStandardInterface, "Byte %d: 0x%x", i, g_rxData[i]);
-        IfxStdIf_DPipe_print(&g_ascStandardInterface, "0x%x ", g_rxData[i]);
-    }
-    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r");
-
-    return true; // Modify as needed
-}
+//
+///* Define the RPLIDAR A2 response packet size */
+//#define RPLIDAR_RESPONSE_SIZE 12
+//
+///* Function to send a request to the RPLIDAR A2 and check its health */
+//bool checkRPLIDARHealth(void)
+//{
+//    uint8_t requestPacket[] = {0xA5, 0x20};  // Request packet
+//
+//    /* Send the request packet to the RPLIDAR A2 */
+//    Ifx_SizeT requestSize = sizeof(requestPacket);
+//    Ifx_SizeT responseSize = RPLIDAR_RESPONSE_SIZE;
+//
+//    // write to serial tx
+//    IfxAsclin_Asc_write(&g_asclin, requestPacket, &requestSize, TIME_INFINITE);
+//
+//    /* Receive the response from the RPLIDAR A2 */
+//    IfxAsclin_Asc_read(&g_asclin, g_rxData, &responseSize, 10000);
+//
+//    // Print all received bytes
+//    for (int i = 0; i < responseSize; i++) {
+////        IfxStdIf_DPipe_print(&g_ascStandardInterface, "Byte %d: 0x%x", i, g_rxData[i]);
+//        IfxStdIf_DPipe_print(&g_ascStandardInterface, "0x%x ", g_rxData[i]);
+//    }
+//    IfxStdIf_DPipe_print(&g_ascStandardInterface, "\n\r");
+//
+//    return true; // Modify as needed
+//}
 
 

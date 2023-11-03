@@ -179,6 +179,36 @@ void runShellInterface(void)
     Ifx_Shell_process(&g_shellInterface);
 }
 
+
+/**
+ * @brief   Print a formatted message to the console using variable arguments.
+ *
+ * @param   format  A format string with optional format specifiers.
+ * @param   ...     Variable arguments that match the format specifiers in the format string.
+ *
+ * Example usage:
+ * - print("Hello, %s! The answer is %d.\n", "world", 42);
+ *
+ * @note    Make sure to include the UART_SHELL.h header file and ensure the global standard interface object (g_ascStandardInterface)
+ *          is properly initialized for console output.
+ */
+void print(const char *format, ...)
+{
+    // Initialize the variable argument list
+    va_list args;
+    va_start(args, format);
+
+    // Format the message using vsnprintf
+    char buffer[1024];  // Adjust the buffer size as needed
+    vsnprintf(buffer, sizeof(buffer), format, args);
+
+    // Print the formatted message
+    IfxStdIf_DPipe_print(&g_ascStandardInterface, "%s", buffer);
+
+    // Clean up the variable argument list
+    va_end(args);
+}
+
 void println(const char *format, ...)
 {
     // Initialize the variable argument list

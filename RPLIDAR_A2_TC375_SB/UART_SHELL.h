@@ -18,11 +18,19 @@
 
 /*------------------------------------------------------Extern Global Variable-------------------------------------------------------*/
 extern IfxStdIf_DPipe  g_ascStandardInterface;                                     /* Standard interface object (io object) Had to make it extern so that I can call Dpipe from other functions*/
+
 /*********************************************************************************************************************/
-/* Using IfxStdIf_DPipe_print is very similar to C printf
- * 1) include UART.h
- * 2) Give reference of the global standard interface object as first argument and text to show on console as second argument
- * IfxStdIf_DPipe_print(&g_ascStandardInterface, "Format %d %d", var1, var2 )*/
+/**
+ * @brief   Print formatted data to the console using the IfxStdIf_DPipe_print function.
+ *
+ * To use IfxStdIf_DPipe_print, follow these steps:
+ * 1) Include the UART.h header in your source file.
+ * 2) Provide the global standard interface object as the first argument and the text to be displayed on the console
+ *    as the second argument, along with optional format specifiers for additional variables.
+ *
+ * Example usage:
+ * IfxStdIf_DPipe_print(&g_ascStandardInterface, "Format %d %d", var1, var2);
+ */
 /*********************************************************************************************************************/
 
 
@@ -31,6 +39,7 @@ extern IfxStdIf_DPipe  g_ascStandardInterface;                                  
 /*********************************************************************************************************************/
 void initShellInterface(void);
 void runShellInterface(void);
+void print(const char *, ...);  /* Print a formatted message to the console using variable arguments. */
 void println(const char *, ...);
 
 

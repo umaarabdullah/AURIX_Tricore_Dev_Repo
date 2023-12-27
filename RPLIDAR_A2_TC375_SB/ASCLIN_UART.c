@@ -134,10 +134,9 @@ void initSerialInterface()
  */
 void send_receive_ASCLIN_UART_message(void)
 {
-    IfxAsclin_Asc_write(&g_asclin, g_txData, &g_count, TIME_INFINITE);   /* Transmit data via TX */
+    IfxAsclin_Asc_write(&g_asclin, g_txData, &g_count, TIME_INFINITE);      /* Transmit data via TX */
     g_count = 7;    // receive 7 bytes of a response descriptor packet
-    IfxAsclin_Asc_read(&g_asclin, g_rxData, &g_count, 10000);    /* Receive data via RX  */
-    // print the received the packet
+    IfxAsclin_Asc_read(&g_asclin, g_rxData, &g_count, 10000);               /* Receive data via RX  */
 }
 
 //

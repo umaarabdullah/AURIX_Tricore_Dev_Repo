@@ -11,6 +11,7 @@
 #include "Ifx_Types.h"
 
 typedef uint32 OperationResult;
+typedef uint32 u_result;
 
 #define RESULT_OK              0
 #define RESULT_FAIL_BIT        0x80000000

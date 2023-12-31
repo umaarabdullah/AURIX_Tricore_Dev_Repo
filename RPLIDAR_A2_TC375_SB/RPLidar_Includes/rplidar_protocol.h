@@ -10,8 +10,6 @@
 
 #include "Ifx_Types.h"
 
-#pragma once
-
 // RP-Lidar Input Packets
 #define RPLIDAR_CMD_SYNC_BYTE        0xA5
 #define RPLIDAR_CMDFLAG_HAS_PAYLOAD  0x80
@@ -25,8 +23,8 @@ typedef struct _rplidar_cmd_packet {
         uint8 syncByte; //must be RPLIDAR_CMD_SYNC_BYTE
         uint8 cmd_flag;
         uint8 size;
-        uint8 data[0];
-} __attribute__((packed)) rplidar_cmd_packet;
+        uint8 data[];
+} rplidar_cmd_packet;
 
 typedef struct _rplidar_ans_header {
         uint8   syncByte1; // must be RPLIDAR_ANS_SYNC_BYTE1
@@ -34,7 +32,7 @@ typedef struct _rplidar_ans_header {
         uint32  size:30;
         uint32  subType:2;
         uint8   type;
-} __attribute__((packed)) rplidar_ans_header;
+} rplidar_ans_header;
 
 
 #endif /* RPLIDAR_INCLUDES_RPLIDAR_PROTOCOL_H_ */

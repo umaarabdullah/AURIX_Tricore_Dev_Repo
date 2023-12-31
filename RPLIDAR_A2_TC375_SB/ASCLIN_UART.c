@@ -139,14 +139,33 @@ void send_receive_ASCLIN_UART_message(void)
     IfxAsclin_Asc_read(&g_asclin, g_rxData, &g_count, 10000);               /* Receive data via RX  */
 }
 
-//
+
+size_t serialWrite(const uint8 *data){
+
+    /* Size of the message */
+    Ifx_SizeT byteData_size = sizeof(data);
+    IfxAsclin_Asc_write(&g_asclin, data, &byteData_size, TIME_INFINITE);      /* Transmit data via TX */
+    return byteData_size;
+}
+
+
+// Read one byte at a time from serial interface
+uint8 serialRead(uint8 num_bytes_to_receive){
+
+    uint8 rx_ByteData[num_bytes_to_receive];
+    Ifx_SizeT byteCount = sizeof(rx_ByteData);
+    IfxAsclin_Asc_read(&g_asclin, &rx_ByteData, &byteCount, 10000);               /* Receive data via RX  */
+    return rx_ByteData;
+}
+
+
 ///* Define the RPLIDAR A2 response packet size */
-//#define RPLIDAR_RESPONSE_SIZE 12
+//#define RPLIDAR_RESPONSE_SIZE 7
 //
 ///* Function to send a request to the RPLIDAR A2 and check its health */
 //bool checkRPLIDARHealth(void)
 //{
-//    uint8_t requestPacket[] = {0xA5, 0x20};  // Request packet
+//    uint8_t requestPacket[] = {0xA5, 0x52};  // Request packet
 //
 //    /* Send the request packet to the RPLIDAR A2 */
 //    Ifx_SizeT requestSize = sizeof(requestPacket);

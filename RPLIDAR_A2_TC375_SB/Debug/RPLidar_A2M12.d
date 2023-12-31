@@ -2,10 +2,10 @@
 ../RPLidar_A2M12.c :
 /RPLidar_A2M12.o :	../RPLidar_A2M12.h
 ../RPLidar_A2M12.h :
-/RPLidar_A2M12.o :	e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdint.h
-e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdint.h :
-/RPLidar_A2M12.o :	e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/typeinfo.h
-e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/typeinfo.h :
+/RPLidar_A2M12.o :	../RPLidar_Includes/rplidar_cmd.h
+../RPLidar_Includes/rplidar_cmd.h :
+/RPLidar_A2M12.o :	../RPLidar_Includes/rplidar_protocol.h
+../RPLidar_Includes/rplidar_protocol.h :
 /RPLidar_A2M12.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/iLLD/TC37A/Tricore/Cpu/Std/Ifx_Types.h
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/iLLD/TC37A/Tricore/Cpu/Std/Ifx_Types.h :
 /RPLidar_A2M12.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Infra/Platform/Tricore/Compilers/Compilers.h
@@ -20,6 +20,14 @@ e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_syst
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/iLLD/TC37A/Tricore/Cpu/Std/Platform_Types.h :
 /RPLidar_A2M12.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/iLLD/TC37A/Tricore/Cpu/Std/Ifx_TypesTasking.h
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/iLLD/TC37A/Tricore/Cpu/Std/Ifx_TypesTasking.h :
+/RPLidar_A2M12.o :	../RPLidar_Includes/rptypes.h
+../RPLidar_Includes/rptypes.h :
+/RPLidar_A2M12.o :	e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdbool.h
+e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdbool.h :
+/RPLidar_A2M12.o :	e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdint.h
+e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdint.h :
+/RPLidar_A2M12.o :	e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/typeinfo.h
+e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/typeinfo.h :
 /RPLidar_A2M12.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/iLLD/TC37A/Tricore/Asclin/Asc/IfxAsclin_Asc.h
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/iLLD/TC37A/Tricore/Asclin/Asc/IfxAsclin_Asc.h :
 /RPLidar_A2M12.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/iLLD/TC37A/Tricore/Asclin/Std/IfxAsclin.h
@@ -110,9 +118,11 @@ c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libra
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/iLLD/TC37A/Tricore/Port/Std/IfxPort.h :
 /RPLidar_A2M12.o :	../ASCLIN_UART.h
 ../ASCLIN_UART.h :
-/RPLidar_A2M12.o :	e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdbool.h
-e:/Infineon/AURIX-Studio-1.9.0/plugins/com.infineon.aurix.tools_1.9.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/stdbool.h :
 /RPLidar_A2M12.o :	../UART_SHELL.h
 ../UART_SHELL.h :
 /RPLidar_A2M12.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.h
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.h :
+/RPLidar_A2M12.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/RPLidar_Includes/rptypes.h
+c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/RPLidar_Includes/rptypes.h :
+/RPLidar_A2M12.o :	../SystemTimer.h
+../SystemTimer.h :

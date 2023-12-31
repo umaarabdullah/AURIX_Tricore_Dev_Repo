@@ -98,3 +98,13 @@ c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libra
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Infra/Sfr/TC37A/_Reg/IfxCbs_reg.h :
 /Cpu0_Main.o :	c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Infra/Sfr/TC37A/_Reg/IfxCbs_regdef.h
 c:/Users/Umaar/Documents/GitHub/AURIX_Tricore_Dev_Repo/RPLIDAR_A2_TC375_SB/Libraries/Infra/Sfr/TC37A/_Reg/IfxCbs_regdef.h :
+/Cpu0_Main.o :	../RPLidar_A2M12.h
+../RPLidar_A2M12.h :
+/Cpu0_Main.o :	../RPLidar_Includes/rplidar_cmd.h
+../RPLidar_Includes/rplidar_cmd.h :
+/Cpu0_Main.o :	../RPLidar_Includes/rplidar_protocol.h
+../RPLidar_Includes/rplidar_protocol.h :
+/Cpu0_Main.o :	../RPLidar_Includes/rptypes.h
+../RPLidar_Includes/rptypes.h :
+/Cpu0_Main.o :	../SystemTimer.h
+../SystemTimer.h :

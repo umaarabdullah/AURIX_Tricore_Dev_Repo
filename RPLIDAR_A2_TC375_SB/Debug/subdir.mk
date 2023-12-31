@@ -10,6 +10,7 @@ C_SRCS += \
 ../Cpu2_Main.c \
 ../GTM_PWM.c \
 ../RPLidar_A2M12.c \
+../SystemTimer.c \
 ../UART_SHELL.c 
 
 COMPILED_SRCS += \
@@ -19,6 +20,7 @@ COMPILED_SRCS += \
 ./Cpu2_Main.src \
 ./GTM_PWM.src \
 ./RPLidar_A2M12.src \
+./SystemTimer.src \
 ./UART_SHELL.src 
 
 C_DEPS += \
@@ -28,6 +30,7 @@ C_DEPS += \
 ./Cpu2_Main.d \
 ./GTM_PWM.d \
 ./RPLidar_A2M12.d \
+./SystemTimer.d \
 ./UART_SHELL.d 
 
 OBJS += \
@@ -37,6 +40,7 @@ OBJS += \
 ./Cpu2_Main.o \
 ./GTM_PWM.o \
 ./RPLidar_A2M12.o \
+./SystemTimer.o \
 ./UART_SHELL.o 
 
 
@@ -60,7 +64,7 @@ OBJS += \
 clean: clean--2e-
 
 clean--2e-:
-	-$(RM) ./ASCLIN_UART.d ./ASCLIN_UART.o ./ASCLIN_UART.src ./Cpu0_Main.d ./Cpu0_Main.o ./Cpu0_Main.src ./Cpu1_Main.d ./Cpu1_Main.o ./Cpu1_Main.src ./Cpu2_Main.d ./Cpu2_Main.o ./Cpu2_Main.src ./GTM_PWM.d ./GTM_PWM.o ./GTM_PWM.src ./RPLidar_A2M12.d ./RPLidar_A2M12.o ./RPLidar_A2M12.src ./UART_SHELL.d ./UART_SHELL.o ./UART_SHELL.src
+	-$(RM) ./ASCLIN_UART.d ./ASCLIN_UART.o ./ASCLIN_UART.src ./Cpu0_Main.d ./Cpu0_Main.o ./Cpu0_Main.src ./Cpu1_Main.d ./Cpu1_Main.o ./Cpu1_Main.src ./Cpu2_Main.d ./Cpu2_Main.o ./Cpu2_Main.src ./GTM_PWM.d ./GTM_PWM.o ./GTM_PWM.src ./RPLidar_A2M12.d ./RPLidar_A2M12.o ./RPLidar_A2M12.src ./SystemTimer.d ./SystemTimer.o ./SystemTimer.src ./UART_SHELL.d ./UART_SHELL.o ./UART_SHELL.src
 
 .PHONY: clean--2e-
 

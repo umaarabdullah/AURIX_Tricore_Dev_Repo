@@ -36,21 +36,23 @@ typedef struct RPLidar
         RPLidarMeasurement currentMeasurement;
 } RPLidar;
 
-OperationResult RPLidar_getHealth(RPLidar *self, rplidar_response_device_health *healthinfo, uint32 timeout);
+OperationResult RPLidar_sendCommand(uint8 cmd, const void *payload, size_t payloadsize);
 
-OperationResult RPLidar_getDeviceInfo(RPLidar *self, rplidar_response_device_info_t *info, _u32 timeout);
+OperationResult RPLidar_waitResponseHeader(rplidar_ans_header *header, uint32 timeout);
+
+OperationResult RPLidar_getHealth(rplidar_response_device_health *healthinfo, uint32 timeout);
+
+OperationResult RPLidar_getDeviceInfo(RPLidar *self, rplidar_response_device_info *info, uint32 timeout);
 
 OperationResult RPLidar_stop(RPLidar *self);
 
-OperationResult RPLidar_startScan(RPLidar *self, bool force, _u32 timeout);
+OperationResult RPLidar_startScan(RPLidar *self, bool force, uint32 timeout);
 
-OperationResult RPLidar_waitPoint(RPLidar *self, _u32 timeout);
+OperationResult RPLidar_waitPoint(RPLidar *self, uint32 timeout);
 
 void RPLidar_getCurrentPoint(const RPLidar *self, RPLidarMeasurement *measurement);
 
-OperationResult RPLidar_sendCommand(RPLidar *self, _u8 cmd, const void *payload, size_t payloadsize);
-
-OperationResult RPLidar_waitResponseHeader(RPLidar *self, rplidar_ans_header_t *header, _u32 timeout);
+void testFunction(void);
 
 
 #endif /* RPLIDAR_A2M12_H_ */

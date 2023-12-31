@@ -9,10 +9,13 @@
 #define ASCLIN_UART_H_
 
 #include "stdbool.h"
+#include "Ifx_Types.h"
 
 void initSerialInterface(void);
 void send_receive_ASCLIN_UART_message(void);    /* Function to test the UART communication by sending a message and waiting for a response. */
-//bool checkRPLIDARHealth(void);  /* Function to send a request to the RPLIDAR A2 and check its health */
+size_t serialWrite(const uint8 *data);
+uint8 serialRead(uint8 num_bytes_to_receive);
 
+//bool checkRPLIDARHealth(void);
 
 #endif /* ASCLIN_UART_H_ */
